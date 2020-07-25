@@ -1,0 +1,30 @@
+li{
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.button{
+  width: 6em;
+}
+
+.title { 
+    color: #57f826; 
+    font-family: "Great Vibes", cursive; 
+    font-size: 2em; 
+    font-weight: normal; 
+    text-align: center; 
+}
+
+.news{
+    padding-left: 20%;
+    padding-right: 20%;   
+}
+
+.videos{
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 66em;
+    background: #161415 url(images/background.jpg) no-repeat top center;
+    background-size: cover;
+}
+
