@@ -1,6 +1,6 @@
 li{
   display: inline-block;
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 
 .button{
@@ -16,15 +16,41 @@ li{
 }
 
 .news{
-    padding-left: 20%;
-    padding-right: 20%;   
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .videos{
-    padding-left: 20%;
-    padding-right: 20%;
-    height: 66em;
     background: #161415 url(images/background.jpg) no-repeat top center;
     background-size: cover;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 66em;
 }
 
+.nav{
+  position: sticky;
+  top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.exploitation{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.footer {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: aliceblue;
+  background-color: #161415;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.footer a, .footer a:visited { color: #525252; }
+.footer a:hover, .footer a:focus { color: #fff; }
