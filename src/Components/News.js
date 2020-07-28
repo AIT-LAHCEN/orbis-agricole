@@ -19,8 +19,9 @@ class News extends Component{
                     <CardImg object className="image" src={article.image} alt={article.name} />
                     <CardImgOverlay>
                         <CardTitle>{article.name}</CardTitle>
-                        <CardBody>
+                        <CardBody className="CardBody">
                             <CardText>{article.description}</CardText>
+                            <p>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(article.date)))}</p>
                         </CardBody>
                     </CardImgOverlay>
                 </Card>
