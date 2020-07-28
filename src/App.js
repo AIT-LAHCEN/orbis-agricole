@@ -5,14 +5,23 @@ import Videos from './Components/Videos';
 import Exploitation from './Components/Exploitation'
 import Footer from './Components/Footer';
 import "./App.css";
+import { ARTICLES } from './Shared/articles';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      articles: ARTICLES
+    };
+  }
 
   render() {
     return(
       <div className="App">
         <Header/>
-        <News/>
+        <News articles={this.state.articles}/>
         <Exploitation/>
         <Videos/>
         <Footer/>

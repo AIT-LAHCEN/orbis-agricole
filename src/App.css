@@ -1,10 +1,10 @@
+Button{
+  width: 6em;
+}
+
 li{
   display: inline-block;
   margin-left: 1em;
-}
-
-.button{
-  width: 6em;
 }
 
 .title { 
@@ -16,21 +16,23 @@ li{
 }
 
 .news{
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .videos{
-    background: #161415 url(images/background.jpg) no-repeat top center;
+    background: #161415;
     background-size: cover;
     margin-left: 20%;
     margin-right: 20%;
     height: 66em;
+    color: aliceblue;
 }
 
-.nav{
+.navigation{
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 html {
@@ -54,3 +56,8 @@ html {
 
 .footer a, .footer a:visited { color: #525252; }
 .footer a:hover, .footer a:focus { color: #fff; }
+
+.image{
+  width: 100%;
+  height: 15rem;
+}

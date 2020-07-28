@@ -4,7 +4,7 @@ import { Button,Nav,Navbar,Form,FormControl } from 'react-bootstrap';
 class Header extends Component {
     render() {
         return (
-            <div className="nav">
+            <div className="navigation">
                 <Navbar bg="dark" variant="dark" expand="lg">
                 <Navbar.Brand href="#home"><h1 className="title">Orbis Agricole</h1></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
