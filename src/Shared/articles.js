@@ -15,7 +15,7 @@ export const ARTICLES =
       category: 'appetizer',
       label:'',
       date: "2019-09-05T17:57:28.556094Z",
-      description:'Nullam ornare eu nibh ac faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque enim orci, dapibus eget auctor dictum, tincidunt et ipsum.'},
+      description:'Nullam ornare eu nibh ac faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque enim orci dapibus.'},
    {
       id: 2,
       name:'Article 3',

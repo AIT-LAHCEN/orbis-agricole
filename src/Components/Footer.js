@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return(
@@ -15,6 +16,8 @@ const Footer = () => {
                         <li className="list-unstyled">
                             <a href="#!">Aide</a>
                         </li>
+                        <li><Link to='/news'>News</Link></li>
+                        <li><Link to='/meteo'>Météo</Link></li>
                         </ul>
                     </MDBCol>
                     <MDBCol md="6">

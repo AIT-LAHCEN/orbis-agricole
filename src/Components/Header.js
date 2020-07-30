@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button,Nav,Navbar,Form,FormControl } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -10,20 +11,20 @@ class Header extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                    <Nav.Link href="#home">Actualités</Nav.Link>
-                    <Nav.Link href="#meteo">Météo</Nav.Link>
-                    <Nav.Link href="#marches">Cours et Marchés</Nav.Link>
-                    <Nav.Link href="#cultures">Cultures</Nav.Link>
+                    <NavLink className="nav-link"  to='/news'><span className="fa fa-newspaper-o fa-lg"></span> Actualités</NavLink>
+                    <NavLink className="nav-link"  to='/meteo'><span className="fa fa-thermometer fa-lg"></span> Météo</NavLink>
+                    <NavLink className="nav-link"  to='/marches'><span className="fa fa-line-chart fa-lg"></span> Cours et Marchés</NavLink>
+                    {/* <Nav.Link href="#cultures">Cultures</Nav.Link>
                     <Nav.Link href="#elevrage">Elevrage</Nav.Link>
-                    <Nav.Link href="#materiels">Tracteurs et Materiels</Nav.Link>
-                    <Nav.Link href="#gestion">Gestion et Droit</Nav.Link>
+                    <Nav.Link href="#materiels">Tracteurs et Materiels</Nav.Link> */}
+                    <NavLink className="nav-link"  to='/gestion'><span className="fa fa-file-text fa-lg"></span> Gestion et Droit</NavLink>
                     </Nav>
                 </Navbar.Collapse>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button className = "button" variant="outline-success">Search</Button>
                 </Form>
-                <ul class="nav navbar-nav navbar-right">
+                <ul className="nav navbar-nav navbar-right">
                     <li><a href="#signup"><Button className="button" variant="outline-info"> S'abonner</Button></a></li>
                     <li><a href="#login"><Button className="button" variant="outline-info"> Connexion</Button></a></li>
                 </ul>
