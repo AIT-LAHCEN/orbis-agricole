@@ -8,7 +8,7 @@ const Footer = () => {
             <MDBContainer fluid className="footer">
                 <MDBRow>
                     <MDBCol md="3">
-                        <h5 className="title">Aide</h5>
+                        <h5 className="title-fouter">Aide</h5>
                         <ul>
                         <li className="list-unstyled">
                             <a href="#!">Conatctez-nous</a>
@@ -21,7 +21,7 @@ const Footer = () => {
                         </ul>
                     </MDBCol>
                     <MDBCol md="6">
-                        <h5 className="title">Services</h5>
+                        <h5 className="title-fouter">Services</h5>
                         <ul>
                         <li className="list-unstyled">
                             <a href="#!">Réabonnez-vous</a>
@@ -56,7 +56,7 @@ const Footer = () => {
                         </ul>
                     </MDBCol>
                     <MDBCol md="3">
-                        <h5 className="title">Les sites du groupe</h5>
+                        <h5 className="title-fouter">Les sites du groupe</h5>
                         <ul>
                         <li className="list-unstyled">
                             <a href="#!">Site 1</a>
