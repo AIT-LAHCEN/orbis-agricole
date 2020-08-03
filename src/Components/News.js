@@ -16,7 +16,7 @@ class News extends Component{
             return (
               <div key={article.id} className="col-12 col-md-5 m-1">
                 <Card>
-                    <Link to={`/news/${article.id}`}>
+                    <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
                         <CardImg object className="image" src={article.image} alt={article.name} />
                         <CardTitle>{article.name}</CardTitle>
                         <CardBody className="CardBody">
