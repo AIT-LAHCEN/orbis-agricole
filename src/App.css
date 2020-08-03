@@ -10,13 +10,12 @@ li{
 .title { 
     color: #45ad26; 
     font-family: "Great Vibes", cursive; 
-    font-size: 1em; 
+    font-size: 1.8em; 
     font-weight: normal; 
     text-align: center; 
     display: flex;
-    margin-right: 2rem;
     align-items: center;
-    
+    margin-left: 5em;
 }
 
 .news{
@@ -75,4 +74,15 @@ html {
     text-align: center;
     margin-right: 2rem;
     align-items: center; 
+}
+
+
+.header-user{
+  height: 100%;
+  padding: 15px 0;
+  float: right;
+}
+
+.item{
+  padding: 0rem;
 }
