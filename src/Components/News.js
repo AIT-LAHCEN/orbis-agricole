@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 class News extends Component{
 
@@ -16,14 +16,14 @@ class News extends Component{
             return (
               <div key={article.id} className="col-12 col-md-5 m-1">
                 <Card>
-                    <CardImg object className="image" src={article.image} alt={article.name} />
-                    <CardImgOverlay>
+                    <Link to={`/news/${article.id}`}>
+                        <CardImg object className="image" src={article.image} alt={article.name} />
                         <CardTitle>{article.name}</CardTitle>
                         <CardBody className="CardBody">
                             <CardText>{article.description}</CardText>
                             <p>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(article.date)))}</p>
                         </CardBody>
-                    </CardImgOverlay>
+                    </Link>
                 </Card>
               </div>
             );
@@ -31,6 +31,16 @@ class News extends Component{
 
         return(
             <div className="container news">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Actualités</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>Actualités</h3>
+                        <hr/>
+                    </div>
+                </div>
                 <div className="row">
                     {news}
                 </div>
