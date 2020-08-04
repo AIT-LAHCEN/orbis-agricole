@@ -85,4 +85,14 @@ html {
 
 .item{
   padding: 0rem;
+  font-size: 1.2em;
+}
+
+
+.mynavbar1{
+  background-color: rgb(16, 59, 37);
+}
+
+.mynavbar2{
+  background-color: #1b7933;
 }

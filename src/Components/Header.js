@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTractor, faEgg, faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 
 export const Header = () => (
     <div className="navigation">
-        <Navbar bg="dark" variant="dark" expand="sm" className="border-bottom border-light">
+        <Navbar variant="dark" expand="sm" className="border-bottom border-light mynavbar1">
             <Navbar.Brand><Link style={{ textDecoration: 'none' }} className="title" to='/home'>Orbis Agricole</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -22,17 +24,17 @@ export const Header = () => (
             </Navbar.Collapse>
         </Navbar>
 
-        <Navbar bg="dark" variant="dark" expand="lg" className="border-bottom border-light item" >
+        <Navbar variant="dark" expand="lg" className="border-bottom border-light item mynavbar2" >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
-                    <NavLink className="nav-link border-right" to='/news'><span className="fa fa-newspaper-o fa-lg"></span> Actualités</NavLink>
-                    <NavLink className="nav-link border-right" to='/meteo'><span className="fa fa-thermometer fa-lg"></span> Météo</NavLink>
-                    <NavLink className="nav-link border-right" to='/marches'><span className="fa fa-line-chart fa-lg"></span> Cours et Marchés</NavLink>
-                    {/* <Nav.Link href="#cultures">Cultures</Nav.Link>
-            <Nav.Link href="#elevrage">Elevrage</Nav.Link>
-            <Nav.Link href="#materiels">Tracteurs et Materiels</Nav.Link> */}
-                    <NavLink className="nav-link" to='/gestion'><span className="fa fa-file-text fa-lg"></span> Gestion et Droit</NavLink>
+                    <NavLink className="nav-link border-right border-left" to='/news'><span className="fa fa-newspaper-o fa-lg"></span> ACTUALITÉS</NavLink>
+                    <NavLink className="nav-link border-right" to='/meteo'><span className="fa fa-thermometer fa-lg"></span> MÉTÉO</NavLink>
+                    <NavLink className="nav-link border-right" to='/marches'><span className="fa fa-line-chart fa-lg"></span> COURS ET MARCHÉS</NavLink>
+                    <Nav.Link className="nav-link border-right" href="#cultures"><FontAwesomeIcon icon={faSeedling} /> CULTURES</Nav.Link>
+                    <Nav.Link className="nav-link border-right" href="#elevrage"><FontAwesomeIcon icon={faEgg} /> ÉLVAGES</Nav.Link>
+                    <Nav.Link className="nav-link border-right" href="#materiels"><FontAwesomeIcon icon={faTractor} /> TRACTEURS ET MATÉRIELS</Nav.Link>
+                    <NavLink className="nav-link border-right" to='/gestion'><span className="fa fa-file-text fa-lg"></span> GESTIONS ET DROITS</NavLink>
                 </Nav>
             </Navbar.Collapse>
 
