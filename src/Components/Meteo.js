@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import InputCity from '../Containers/InputCity' ;
+import { Table } from 'reactstrap';
 
 export default class Meteo extends Component {
     state = {
-        temperature : '',
+        hours : [],
+        temperature : [],
+        temperatureMin : [],
+        temperatureMax : [],
+        Humidite : [],
+        Vent : [],
         error : '' ,
         isBusy : false
       }
@@ -17,15 +23,69 @@ export default class Meteo extends Component {
           return response.json();
         }).then(data=>{
             console.log(data);
-          const kelvin = data.list[0].main.temp ;
-          const celcius = kelvin - 273.15 ;
+            let hoursToReturn = [];
+            let tempToReturn = [];
+            let tempMinToReturn = [];
+            let tempMaxToReturn = [];
+            let humiditeToReturn = [];
+            let ventToReturn = [];
+            const hoursList = () => {
+                for (let i = 0; i < 5; i++) {
+                  hoursToReturn.push(<th>{data.list[i].dt_txt}</th>);
+                }
+                return hoursToReturn;
+              };
+              const humiditeList = () => {
+                for (let i = 0; i < 5; i++) {
+                    humiditeToReturn.push(<th>{data.list[i].main.humidity}</th>);
+                }
+                return humiditeToReturn;
+              };
+              const ventList = () => {
+                for (let i = 0; i < 5; i++) {
+                    ventToReturn.push(<th>{data.list[i].wind.speed}</th>);
+                }
+                return ventToReturn;
+              };
+              const tempList = () => {
+                for (let i = 0; i < 5; i++) {
+                    const kelvin = data.list[i].main.temp ;
+                    const celcius = kelvin - 273.15 ;
+                    var n = celcius.toFixed(2);
+                  tempToReturn.push(<th>{n}</th>);
+                }
+                return tempToReturn;
+              };
+              const tempMinList = () => {
+                for (let i = 0; i < 5; i++) {
+                    const kelvin = data.list[i].main.temp_min ;
+                    const celcius = kelvin - 273.15 ;
+                    var n = celcius.toFixed(2);
+                  tempMinToReturn.push(<th>{n}</th>);
+                }
+                return tempMinToReturn;
+              };
+              const tempMaxList = () => {
+                for (let i = 0; i < 5; i++) {
+                    const kelvin = data.list[i].main.temp_max ;
+                    const celcius = kelvin - 273.15 ;
+                    var n = celcius.toFixed(2);
+                  tempMaxToReturn.push(<th>{n}</th>);
+                }
+                return tempMaxToReturn;
+              };
           this.setState({
-            temperature : celcius ,
+              hours : hoursList(),
+            temperature : tempList() ,
+            temperatureMin : tempMinList() ,
+            temperatureMax : tempMaxList() ,
+            Humidite : humiditeList(),
+            Vent : ventList(),
             isBusy : false 
           })
         }).catch(error=>{
           this.setState({
-            error : 'data not found :(' ,
+            error : '_' ,
             isBusy : false
           })
         })
@@ -33,18 +93,39 @@ export default class Meteo extends Component {
       }
       
       render(){
-        let data = null ;
-        if(this.state.isBusy && !this.state.error){
-          data = <p  style={{textAlign : 'center'}}> Loading ... </p>
-        } else if (this.state.error) {
-          data =  <p  style={{textAlign : 'center'}}>Something Went Wrong : {this.state.error}</p>
-        } else if(this.state.temperature !== '') {
-          data = <p  style={{textAlign : 'center'}}>Temperature is : {this.state.temperature} degree celcius.</p>
-        }
         return(
           <React.Fragment>
               <InputCity getTemperature={this.getTemperature}/> <br/>
-              {data}
+              <Table>
+                <thead>
+                    <tr>
+                    <th>Heures</th>
+                    {this.state.hours}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Température (°C)</th>
+                    {this.state.temperature}
+                    </tr>
+                    <tr>
+                    <th scope="row">Température min (°C)</th>
+                    {this.state.temperatureMin}
+                    </tr>
+                    <tr>
+                    <th scope="row">Température max (°C)</th>
+                    {this.state.temperatureMax}
+                    </tr>
+                    <tr>
+                    <th scope="row">Humidité (%)</th>
+                    {this.state.Humidite}
+                    </tr>
+                    <tr>
+                    <th scope="row">Vitesse du vent (km/h)</th>
+                    {this.state.Vent}
+                    </tr>
+                </tbody>
+            </Table>
           </React.Fragment>
         );
       }

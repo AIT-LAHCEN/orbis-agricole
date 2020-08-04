@@ -17,7 +17,7 @@ export default class InputCity extends React.Component {
                 placeholder="Input City Name"
                 value={this.state.city}
                 onChange={this.handleChange} />
-                <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Get Temperature</button>
+                <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Voir météo</button>
             </div>
         );
     }
