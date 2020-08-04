@@ -31,7 +31,7 @@ class News extends Component{
 
         return(
             <div className="container news">
-                <div className="row">
+                <div className="column">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Actualités</BreadcrumbItem>
@@ -41,7 +41,7 @@ class News extends Component{
                         <hr/>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                     {news}
                 </div>
             </div>

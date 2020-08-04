@@ -6,7 +6,7 @@ import Articledetail from './ArticledetailComponent';
 // import Videos from './Videos';
 // import Exploitation from './Exploitation'
 import Footer from './Footer';
-import {Meteo} from './Meteo';
+import Meteo from './Meteo';
 import { ARTICLES } from '../Shared/articles';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -29,8 +29,7 @@ class Main extends Component {
     }
 
     return(
-      
-        <div className="App">
+        <React.Fragment>
           <Header/>
           <Switch>
               <Route path='/meteo' component={Meteo} />
@@ -42,7 +41,7 @@ class Main extends Component {
           {/* <Exploitation/>
           <Videos/> */}
           <Footer/>
-        </div>
+        </React.Fragment>
       
     );
   }

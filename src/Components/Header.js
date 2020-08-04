@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTractor, faEgg, faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { faTractor, faPaw, faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 
 export const Header = () => (
@@ -31,9 +31,9 @@ export const Header = () => (
                     <NavLink className="nav-link border-right border-left" to='/news'><span className="fa fa-newspaper-o fa-lg"></span> ACTUALITÉS</NavLink>
                     <NavLink className="nav-link border-right" to='/meteo'><span className="fa fa-thermometer fa-lg"></span> MÉTÉO</NavLink>
                     <NavLink className="nav-link border-right" to='/marches'><span className="fa fa-line-chart fa-lg"></span> COURS ET MARCHÉS</NavLink>
-                    <Nav.Link className="nav-link border-right" href="#cultures"><FontAwesomeIcon icon={faSeedling} /> CULTURES</Nav.Link>
-                    <Nav.Link className="nav-link border-right" href="#elevrage"><FontAwesomeIcon icon={faEgg} /> ÉLVAGES</Nav.Link>
-                    <Nav.Link className="nav-link border-right" href="#materiels"><FontAwesomeIcon icon={faTractor} /> TRACTEURS ET MATÉRIELS</Nav.Link>
+                    <Nav.Link className="nav-link border-right" to="/cultures"><FontAwesomeIcon icon={faSeedling} /> CULTURES</Nav.Link>
+                    <Nav.Link className="nav-link border-right" to="/elevrage"><FontAwesomeIcon icon={faPaw} /> ÉLVAGES</Nav.Link>
+                    <Nav.Link className="nav-link border-right" to="/materiels"><FontAwesomeIcon icon={faTractor} /> TRACTEURS ET MATÉRIELS</Nav.Link>
                     <NavLink className="nav-link border-right" to='/gestion'><span className="fa fa-file-text fa-lg"></span> GESTIONS ET DROITS</NavLink>
                 </Nav>
             </Navbar.Collapse>
