@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import InputCity from '../Containers/InputCity' ;
 import { Table } from 'reactstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faThermometerFull, faThermometerEmpty, faThermometerThreeQuarters, faWater, faWind } from '@fortawesome/free-solid-svg-icons'
+
+
 
 export default class Meteo extends Component {
     state = {
@@ -75,7 +79,7 @@ export default class Meteo extends Component {
                 return tempMaxToReturn;
               };
           this.setState({
-              hours : hoursList(),
+            hours : hoursList(),
             temperature : tempList() ,
             temperatureMin : tempMinList() ,
             temperatureMax : tempMaxList() ,
@@ -99,29 +103,29 @@ export default class Meteo extends Component {
               <Table>
                 <thead>
                     <tr>
-                    <th>Heures</th>
+                  <th><FontAwesomeIcon icon={faClock} className="fa-fw"/> <span class="ml-2">Heures</span> </th>
                     {this.state.hours}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">Température (°C)</th>
+                  <th scope="row"><FontAwesomeIcon icon={faThermometerThreeQuarters} className="fa-fw" /> <span class="ml-2">Température (°C)</span></th>
                     {this.state.temperature}
                     </tr>
                     <tr>
-                    <th scope="row">Température min (°C)</th>
+                  <th scope="row"><FontAwesomeIcon icon={faThermometerEmpty} className="fa-fw" /> <span class="ml-2">Température min (°C)</span></th>
                     {this.state.temperatureMin}
                     </tr>
                     <tr>
-                    <th scope="row">Température max (°C)</th>
+                  <th scope="row"><FontAwesomeIcon icon={faThermometerFull} className="fa-fw" /> <span class="ml-2">Température max (°C</span>)</th>
                     {this.state.temperatureMax}
                     </tr>
                     <tr>
-                    <th scope="row">Humidité (%)</th>
+                  <th scope="row"><FontAwesomeIcon icon={faWater} className="fa-fw"/> <span class="ml-2">Humidité (%)</span></th>
                     {this.state.Humidite}
                     </tr>
                     <tr>
-                    <th scope="row">Vitesse du vent (km/h)</th>
+                  <th scope="row"><FontAwesomeIcon icon={faWind} className="fa-fw"/> <span class="ml-2">Vitesse du vent (km/h)</span> </th>
                     {this.state.Vent}
                     </tr>
                 </tbody>

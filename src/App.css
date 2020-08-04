@@ -15,7 +15,11 @@ li{
     text-align: center; 
     display: flex;
     align-items: center;
-    margin-left: 5em;
+    margin-left: 5em; 
+}
+
+.title:hover {
+  color :rgb(6, 168, 6);
 }
 
 .news{
@@ -83,7 +87,7 @@ html {
   float: right;
 }
 
-.item{
+.items{
   padding: 0rem;
   font-size: 1.2em;
 }
@@ -95,4 +99,19 @@ html {
 
 .mynavbar2{
   background-color: #1b7933;
+}
+
+.login-bar{
+  padding-left:40%;
+}
+
+
+.pill {
+  background-color: rgb(16, 59, 37);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.712);
+}
+
+.non-active-pill:hover{
+  background-color: rgb(16, 59, 37);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.712);
 }

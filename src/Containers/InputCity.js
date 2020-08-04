@@ -1,8 +1,12 @@
 import React from 'react' ;
 
+
 export default class InputCity extends React.Component {
+
+    
+
     state={
-        city : ''
+        city : 'rabat'
     }
 
     handleChange = event => {
@@ -10,6 +14,7 @@ export default class InputCity extends React.Component {
             city : event.target.value
         })
     }
+    
     render(){
         return(
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
