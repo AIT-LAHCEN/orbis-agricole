@@ -6,7 +6,7 @@ export default class InputCity extends React.Component {
     
 
     state={
-        city : 'rabat'
+        city : ''
     }
 
     handleChange = event => {
@@ -19,7 +19,7 @@ export default class InputCity extends React.Component {
         return(
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
                 <input type="text" 
-                placeholder="Input City Name"
+                placeholder="Entrer le nom de la ville"
                 value={this.state.city}
                 onChange={this.handleChange} />
                 <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Voir météo</button>

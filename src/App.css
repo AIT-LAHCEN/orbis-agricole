@@ -27,6 +27,11 @@ li{
   padding-right: 2%;
 }
 
+.meteo{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
 .videos{
     background: #161415;
     background-size: cover;

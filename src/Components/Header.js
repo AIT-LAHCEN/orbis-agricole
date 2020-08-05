@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTractor, faPaw, faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { faTractor, faPaw, faSeedling } from '@fortawesome/free-solid-svg-icons';
 
 
 export const Header = () => (

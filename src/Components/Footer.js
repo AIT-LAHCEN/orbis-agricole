@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter} from "mdbreact";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -73,6 +73,10 @@ const Footer = () => {
                         </ul>
                     </MDBCol>
                 </MDBRow>
+            </MDBContainer>
+            <MDBContainer>
+                <a className="btn-floating btn-lg btn-fb" href="http://www.facebook.com/"><i className="fa fa-facebook"></i></a>
+                <a className="btn-floating btn-lg btn-tw" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
             </MDBContainer>
             <div className="footer-copyright text-center py-3">
                 <MDBContainer fluid>

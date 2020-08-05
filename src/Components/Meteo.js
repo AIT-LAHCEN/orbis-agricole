@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputCity from '../Containers/InputCity' ;
-import { Table } from 'reactstrap';
+import { Table, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faThermometerFull, faThermometerEmpty, faThermometerThreeQuarters, faWater, faWind } from '@fortawesome/free-solid-svg-icons'
 
@@ -99,6 +100,16 @@ export default class Meteo extends Component {
       render(){
         return(
           <React.Fragment>
+                <div className="meteo">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Météo</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>Météo</h3>
+                        <hr/>
+                    </div>
+                </div>
               <InputCity getTemperature={this.getTemperature}/> <br/>
               <Table>
                 <thead>
