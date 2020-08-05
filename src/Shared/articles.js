@@ -3,7 +3,7 @@ export const ARTICLES =
     {
       id: 0,
       name:'Article 1',
-      image: 'images/article1.jpg',
+      image: 'orbis-agricole/images/article1.jpg',
       category: 'mains',
       label:'Hot',
       date: "2019-10-16T17:57:28.556094Z",
@@ -11,7 +11,7 @@ export const ARTICLES =
    {
       id: 1,
       name:'Article 2',
-      image: 'images/article2.jpg',
+      image: 'orbis-agricole/images/article2.jpg',
       category: 'appetizer',
       label:'',
       date: "2019-09-05T17:57:28.556094Z",
@@ -19,7 +19,7 @@ export const ARTICLES =
    {
       id: 2,
       name:'Article 3',
-      image: 'images/article3.jpg',
+      image: 'orbis-agricole/images/article3.jpg',
       category: 'appetizer',
       label:'New',
       date: "2020-02-13T17:57:28.556094Z",
@@ -27,7 +27,7 @@ export const ARTICLES =
    {
       id: 3,
       name:'Article 4',
-      image: 'images/article4.jpg',
+      image: 'orbis-agricole/images/article4.jpg',
       category: 'dessert',
       label:'',
       date: "2019-12-02T17:57:28.556094Z",
