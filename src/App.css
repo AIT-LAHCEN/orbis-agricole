@@ -52,8 +52,10 @@ html {
 }
 
 .exploitation{
-  padding-left: 20%;
-  padding-right: 20%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .footer {
@@ -119,4 +121,32 @@ html {
 .non-active-pill:hover{
   background-color: rgb(16, 59, 37);
   border-bottom: 5px solid rgba(255, 255, 255, 0.712);
+}
+
+.cardButton{
+  padding: 30px auto 20px 20px !important;
+  margin: auto !important;
+  width: 500px;
+  white-space: nowrap !important;
+  text-align: center !important;
+  background: linear-gradient(to right, #a9e0b7, #a9e0b7);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size 1s 0s;
+}
+
+.cardButton:hover{
+  background-color : #a9e0b7 !important;
+  transition: 0.8s !important;
+  background-size: 100% 100%;
+}
+
+.myCard:hover{
+  background-color : #a9e0b7 !important;
+  transition: 1.2s !important;
+}
+
+.card-title{
+  font-size: 1.5em !important;
+  color: #1b7933 !important;
 }
