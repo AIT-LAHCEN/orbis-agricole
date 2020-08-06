@@ -11,6 +11,7 @@ import Gestion from './Gestion';
 import Materiels from './Materiels';
 import Cultures from './Cultures';
 import Elevage from './Elevage';
+import Inscription from './Inscription';
 import { ARTICLES } from '../Shared/articles';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -41,6 +42,7 @@ class Main extends Component {
               <Route path='/materiels' component={Materiels} />
               <Route path='/cultures' component={Cultures} />
               <Route path='/elevage' component={Elevage} />
+              <Route path='/signup' component={Inscription} />
               <Route exact path='/news' component={() => <News articles={this.state.articles}/>} />
               <Route path='/news/:articleId' component={ArticleWithId} />
               <Route exact path='/home' component={Accueil} />

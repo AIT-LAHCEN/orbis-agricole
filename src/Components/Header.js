@@ -16,8 +16,8 @@ export const Header = () => (
                         <FormControl type="text" placeholder="Search" className="mr-sm-1" />
                     </Form>
                     <ul className="nav navbar-nav navbar-right">
-                        <li><a href="#signup"><Button className="button" variant="outline-success"> S'abonner</Button></a></li>
-                        <li><a href="#login"><Button className="button" variant="outline-success"> Connexion</Button></a></li>
+                        <li><NavLink to="/signup"><Button className="button" variant="outline-success"> S'inscrire</Button></NavLink></li>
+                        <li><NavLink to="/login"><Button className="button" variant="outline-success"> Connexion</Button></NavLink></li>
                     </ul>
                 </div>
             </Navbar.Collapse>

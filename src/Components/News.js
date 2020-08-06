@@ -59,7 +59,7 @@ class News extends Component{
 
         return(
             <div className="container news">
-                <div className="meteo">
+                <div className="column">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Actualités</BreadcrumbItem>
