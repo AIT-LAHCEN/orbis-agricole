@@ -27,7 +27,7 @@ export default class Meteo extends Component {
         fetch(url).then(response=>{
           return response.json();
         }).then(data=>{
-            console.log(data);
+            // console.log(data);
             let hoursToReturn = [];
             let tempToReturn = [];
             let tempMinToReturn = [];
@@ -106,7 +106,7 @@ export default class Meteo extends Component {
                         <BreadcrumbItem active>Météo</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>Météo</h3>
+                        <h3><FontAwesomeIcon icon={faThermometerThreeQuarters} /> Météo</h3>
                         <hr/>
                     </div>
                 </div>

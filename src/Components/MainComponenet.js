@@ -7,6 +7,10 @@ import Articledetail from './ArticledetailComponent';
 // import Exploitation from './Exploitation'
 import Footer from './Footer';
 import Meteo from './Meteo';
+import Gestion from './Gestion';
+import Materiels from './Materiels';
+import Cultures from './Cultures';
+import Elevage from './Elevage';
 import { ARTICLES } from '../Shared/articles';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -33,6 +37,10 @@ class Main extends Component {
           <Header/>
           <Switch>
               <Route path='/meteo' component={Meteo} />
+              <Route path='/gestion' component={Gestion} />
+              <Route path='/materiels' component={Materiels} />
+              <Route path='/cultures' component={Cultures} />
+              <Route path='/elevage' component={Elevage} />
               <Route exact path='/news' component={() => <News articles={this.state.articles}/>} />
               <Route path='/news/:articleId' component={ArticleWithId} />
               <Route exact path='/home' component={Accueil} />

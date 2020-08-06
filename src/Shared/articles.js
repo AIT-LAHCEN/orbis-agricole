@@ -7,6 +7,7 @@ export const ARTICLES =
       category: 'mains',
       label:'Hot',
       date: "2019-10-16T17:57:28.556094Z",
+      theme: 'cultures',
       description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus nibh vitae turpis semper, id viverra nisl euismod.'},
    {
       id: 1,
@@ -15,6 +16,7 @@ export const ARTICLES =
       category: 'appetizer',
       label:'',
       date: "2019-09-05T17:57:28.556094Z",
+      theme: 'élevage',
       description:'Nullam ornare eu nibh ac faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque enim orci dapibus.'},
    {
       id: 2,
@@ -23,6 +25,7 @@ export const ARTICLES =
       category: 'appetizer',
       label:'New',
       date: "2020-02-13T17:57:28.556094Z",
+      theme: 'matériels',
       description:'Quisque elit dolor, lacinia tristique fringilla in, placerat vel sapien. Ut suscipit libero justo, rutrum condimentum mauris tincidunt.'},
    {
       id: 3,
@@ -31,5 +34,6 @@ export const ARTICLES =
       category: 'dessert',
       label:'',
       date: "2019-12-02T17:57:28.556094Z",
+      theme: 'gestion',
       description:'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam mollis massa quis magna pulvinar, ut laoreet felis tincidunt.'}
    ];

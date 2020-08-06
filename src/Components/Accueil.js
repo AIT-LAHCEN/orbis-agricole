@@ -28,4 +28,4 @@ class Accueil extends Component{
     }
 }
 
-export default Accueil
+export default Accueil;

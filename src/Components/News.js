@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 class News extends Component{
 
@@ -23,24 +25,23 @@ class News extends Component{
               <div key={article.id} className="col-12 col-md-5 m-1">
                 <Card>
                     <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
-
-
                         <CardActionArea className="myCard">
                             <CardMedia className="image" component="img" height="140" image={article.image}/>
                             <CardContent>
-                                <Typography gutterBottom className="card-title body" > {article.name} </Typography>
-                                <Typography variant="body" color="textPrimary" component="p">
+                                <Typography gutterBottom className="card-title body alignleft" > {article.name} </Typography>
+                                <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
+                                <Typography variant="body1" color="textPrimary" component="p">
                                         {article.description}
                                 </Typography>
                                 <br></br>
-                                <Typography variant="body" color="textSecondary" component="p">
+                                <Typography variant="body1" color="textSecondary" component="p">
                                         {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(article.date)))}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
                             {/* <Link href="#">Card Link </Link> */}
-                            <Button size="small" color="green" className="cardButton">En savoir plus</Button>
+                            <Button size="small" color="default" className="cardButton">En savoir plus</Button>
                         </CardActions>
 
 
@@ -58,13 +59,13 @@ class News extends Component{
 
         return(
             <div className="container news">
-                <div className="column">
+                <div className="meteo">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Actualités</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>Actualités</h3>
+                        <h3><FontAwesomeIcon icon={faNewspaper} /> Actualités</h3>
                         <hr/>
                     </div>
                 </div>

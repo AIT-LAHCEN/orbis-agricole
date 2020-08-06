@@ -27,18 +27,19 @@ class News extends Component{
                             <CardMedia className="image" component="img" height="140" image={article.image}/>
                             <CardContent>
                                 <Typography gutterBottom className="card-title body" > {article.name} </Typography>
-                                <Typography variant="body" color="textPrimary" component="p">
+                                <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
+                                <Typography variant="body1" color="textPrimary" component="p">
                                         {article.description}
                                 </Typography>
                                 <br></br>
-                                <Typography variant="body" color="textSecondary" component="p">
+                                <Typography variant="body1" color="textSecondary" component="p">
                                         {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(article.date)))}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
                             {/* <Link href="#">Card Link </Link> */}
-                            <Button size="small" color="green" className="cardButton">En savoir plus</Button>
+                            <Button size="small" color="default" className="cardButton">En savoir plus</Button>
                         </CardActions>
                       
                     </Link>
@@ -49,12 +50,6 @@ class News extends Component{
 
         return(
             <div className="container news">
-                <div className="column">
-                    <div className="col-12">
-                        <h3>Actualités</h3>
-                        <hr/>
-                    </div>
-                </div>
                 <div className="row d-flex justify-content-center">
                     {news}
                 </div>
