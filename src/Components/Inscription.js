@@ -89,10 +89,10 @@ class Inscription extends Component {
       return (
         <div classNmae="container">
             <div className="row row-content">
-                    <div className="col-12 meteo">
+                    <div className="col-12 padd">
                         <h3>Remplir vos informations</h3>
                     </div>
-                        <div className="col-12 col-md-9 meteo">
+                        <div className="col-12 col-md-9 padd">
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup row>
                                     <Label htmlFor="firstname" md={4}>Nom</Label>

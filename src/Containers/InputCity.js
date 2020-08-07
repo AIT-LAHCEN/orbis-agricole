@@ -1,10 +1,8 @@
-import React from 'react' ;
+import React, { Component } from "react";
 
 
-export default class InputCity extends React.Component {
-
+class InputCity extends Component {
     
-
     state={
         city : ''
     }
@@ -14,12 +12,30 @@ export default class InputCity extends React.Component {
             city : event.target.value
         })
     }
+
+    
     
     render(){
         
+        const Modifier = () => {
+            if (this.state.city === '') {
+                return (
+                    <>
+                        <h2>Voici le météo de Rabat</h2>
+                    </>
+                )
+            }
+            return (
+                <>
+                    <h2>Voici le météo de {this.state.city}</h2>
+                </>
+            )
+        }
+
 
         return(
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
+                <Modifier />
                 <input type="text" 
                 placeholder="Entrer le nom de la ville"
                 value={this.state.city}
@@ -33,3 +49,5 @@ export default class InputCity extends React.Component {
         this.props.getTemperature("Rabat");
     }
 }
+
+export default InputCity;

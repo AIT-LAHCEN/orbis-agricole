@@ -27,7 +27,7 @@ li{
   padding-right: 2%;
 }
 
-.meteo{
+.padd{
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -35,8 +35,8 @@ li{
 .videos{
     background: #161415;
     background-size: cover;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     height: 66em;
     color: aliceblue;
 }

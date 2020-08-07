@@ -21,7 +21,7 @@ class Materiels extends Component{
 
         return(
             <div className="App">
-                <div className="meteo">
+                <div className="padd">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Tracteurs et matériels</BreadcrumbItem>

@@ -100,7 +100,7 @@ export default class Meteo extends Component {
       render(){
         return(
           <React.Fragment>
-                <div className="meteo">
+                <div className="padd">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Météo</BreadcrumbItem>
