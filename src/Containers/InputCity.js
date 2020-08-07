@@ -16,6 +16,8 @@ export default class InputCity extends React.Component {
     }
     
     render(){
+        
+
         return(
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
                 <input type="text" 
@@ -25,5 +27,9 @@ export default class InputCity extends React.Component {
                 <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Voir météo</button>
             </div>
         );
+    }
+
+    componentDidMount() {
+        this.props.getTemperature("Rabat");
     }
 }

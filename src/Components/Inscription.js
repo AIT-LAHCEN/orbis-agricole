@@ -76,6 +76,10 @@ class Inscription extends Component {
 
         if (this.state.touched.email && email.split('').filter(x => x === '@').length !== 1)
             errors.email = "L'adresse e-mail doit contenir le @";
+        
+        const regPass = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+        if (this.state.touched.password && password.length < 10 && regPass.test(password))
+            errors.password = "Entrez une combinaison d'au moins 10 chiffres, lettres et signes de ponctuation (tels que ! et &).";
 
         return errors;
     }
