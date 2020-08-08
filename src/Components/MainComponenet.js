@@ -12,24 +12,27 @@ import Materiels from './Materiels';
 import Cultures from './Cultures';
 import Elevage from './Elevage';
 import Inscription from './Inscription';
-import { ARTICLES } from '../Shared/articles';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    articles: state.articles
+  }
+}
+
 
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      articles: ARTICLES
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
 
     const ArticleWithId = ({match}) => {
       return(
-        <Articledetail article={this.state.articles.filter((article) => article.id === parseInt(match.params.articleId,10))[0]} />
+        <Articledetail article={this.props.articles.filter((article) => article.id === parseInt(match.params.articleId,10))[0]} />
       );
     }
 
@@ -43,7 +46,7 @@ class Main extends Component {
               <Route path='/cultures' component={Cultures} />
               <Route path='/elevage' component={Elevage} />
               <Route path='/signup' component={Inscription} />
-              <Route exact path='/news' component={() => <News articles={this.state.articles}/>} />
+              <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
               <Route path='/news/:articleId' component={ArticleWithId} />
               <Route exact path='/home' component={Accueil} />
               <Redirect to="/home" />
@@ -57,4 +60,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

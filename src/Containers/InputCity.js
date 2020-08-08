@@ -21,13 +21,13 @@ class InputCity extends Component {
             if (this.state.city === '') {
                 return (
                     <>
-                        <h2>Voici le météo de Rabat</h2>
+                        <h3>Voici le météo de Rabat</h3>
                     </>
                 )
             }
             return (
                 <>
-                    <h2>Voici le météo de {this.state.city}</h2>
+                    <h3>Voici le météo de {this.state.city}</h3>
                 </>
             )
         }
