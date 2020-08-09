@@ -6,6 +6,5 @@ export const ConfigureStore = () => {
         Reducer, // reducer
         initialState, // our initialState  
     );
-
     return store;
 }
