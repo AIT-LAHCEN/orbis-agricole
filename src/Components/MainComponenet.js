@@ -14,6 +14,7 @@ import Elevage from './Elevage';
 import Inscription from './Inscription';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
   return {
@@ -39,18 +40,22 @@ class Main extends Component {
     return(
         <React.Fragment>
           <Header/>
-          <Switch>
-              <Route path='/meteo' component={Meteo} />
-              <Route path='/gestion' component={Gestion} />
-              <Route path='/materiels' component={Materiels} />
-              <Route path='/cultures' component={Cultures} />
-              <Route path='/elevage' component={Elevage} />
-              <Route path='/signup' component={Inscription} />
-              <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
-              <Route path='/news/:articleId' component={ArticleWithId} />
-              <Route exact path='/home' component={Accueil} />
-              <Redirect to="/home" />
-          </Switch>
+          <TransitionGroup>
+            <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+              <Switch>
+                  <Route path='/meteo' component={Meteo} />
+                  <Route path='/gestion' component={Gestion} />
+                  <Route path='/materiels' component={Materiels} />
+                  <Route path='/cultures' component={Cultures} />
+                  <Route path='/elevage' component={Elevage} />
+                  <Route path='/signup' component={Inscription} />
+                  <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
+                  <Route path='/news/:articleId' component={ArticleWithId} />
+                  <Route exact path='/home' component={Accueil} />
+                  <Redirect to="/home" />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
           {/* <Exploitation/>
           <Videos/> */}
           <Footer/>

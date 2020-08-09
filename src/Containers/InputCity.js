@@ -37,7 +37,7 @@ class InputCity extends Component {
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
                 <Modifier />
                 <input type="text" 
-                placeholder="Entrer le nom de la ville"
+                placeholder="Modifier la ville"
                 value={this.state.city}
                 onChange={this.handleChange} />
                 <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Voir météo</button>
