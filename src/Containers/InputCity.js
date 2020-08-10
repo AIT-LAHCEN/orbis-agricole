@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from "jquery";
 
 
 class InputCity extends Component {
@@ -13,6 +14,21 @@ class InputCity extends Component {
         })
     }
 
+    search_click = () => {
+        $(".accept-button").click(function(){
+           $(this).addClass("activeMeteo"); 
+
+           setTimeout(function () {
+               $(".accept-button").addClass("successMeteo");
+           },1000);
+
+           setTimeout(function () {
+               $(".accept-button").removeClass("activeMeteo");
+               $(".accept-button").removeClass("successMeteo");
+           },2000);
+        });
+    }
+
     
     
     render(){
@@ -21,13 +37,13 @@ class InputCity extends Component {
             if (this.state.city === '') {
                 return (
                     <>
-                        <h3>Voici le météo de Rabat</h3>
+                        <h3>La météo de Rabat</h3>
                     </>
                 )
             }
             return (
                 <>
-                    <h3>Voici le météo de {this.state.city}</h3>
+                    <h3>La météo de {this.state.city}</h3>
                 </>
             )
         }
@@ -36,12 +52,25 @@ class InputCity extends Component {
         return(
             <div style={{textAlign : 'center' , marginTop : '20px'}}>
                 <Modifier />
-                <input type="text" 
+                {/* <input type="text" 
                 placeholder="Modifier la ville"
                 value={this.state.city}
-                onChange={this.handleChange} />
-                <button onClick={()=>{this.props.getTemperature(this.state.city)}}>Voir météo</button>
-            </div>
+                onChange={this.handleChange} /> */}
+                <div className="search-city">
+                    <select className="select-city" value={this.state.city} onChange={this.handleChange}>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Agadir">Agadir</option>
+                    </select>
+                    <button className="accept-button" onClick={ () => { 
+                        this.search_click();
+                        this.props.getTemperature(this.state.city); 
+                        }}>
+                            Voir météo
+                    </button>
+                </div>
+               </div>
         );
     }
 
