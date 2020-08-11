@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Meteo from './Meteo';
 import Gestion from './Gestion';
 import Materiels from './Materiels';
+import Cours_Marches from './Marche_Stats';
 import Cultures from './Cultures';
 import Elevage from './Elevage';
 import Inscription from './Inscription';
@@ -47,6 +48,7 @@ class Main extends Component {
                   <Route path='/gestion' component={Gestion} />
                   <Route path='/materiels' component={Materiels} />
                   <Route path='/cultures' component={Cultures} />
+                  <Route path='/cours_marches' component={Cours_Marches} />
                   <Route path='/elevage' component={Elevage} />
                   <Route path='/signup' component={Inscription} />
                   <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />

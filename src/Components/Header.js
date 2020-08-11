@@ -55,7 +55,7 @@ class Header extends Component {
                     <Nav className="mx-auto">
                         <NavLink className="nav-link border-right border-left non-active-pill" activeClassName="pill" to='/news'><FontAwesomeIcon icon={faNewspaper} /> ACTUALITÉS</NavLink>
                         <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to='/meteo'><FontAwesomeIcon icon={faThermometerThreeQuarters} /> MÉTÉO</NavLink>
-                        <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to='/marches'><FontAwesomeIcon icon={faChartLine} /> COURS ET MARCHÉS</NavLink>
+                        <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to='/cours_marches'><FontAwesomeIcon icon={faChartLine} /> COURS ET MARCHÉS</NavLink>
                         <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to="/cultures"><FontAwesomeIcon icon={faSeedling} /> CULTURES</NavLink>
                         <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to="/elevage"><FontAwesomeIcon icon={faPaw} /> ÉLVEAGE</NavLink>
                         <NavLink className="nav-link border-right non-active-pill" activeClassName="pill" to="/materiels"><FontAwesomeIcon icon={faTractor} /> TRACTEURS ET MATÉRIELS</NavLink>

@@ -272,3 +272,9 @@ html {
   display: flex;
   justify-content: center;
 }
+
+
+.chart{
+  margin-left: 20%;
+  margin-right: 20%;
+} 
