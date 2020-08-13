@@ -35,25 +35,25 @@ export default class Meteo extends Component {
             let humiditeToReturn = [];
             let ventToReturn = [];
             const hoursList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                   hoursToReturn.push(<th>{data.list[i].dt_txt}</th>);
                 }
                 return hoursToReturn;
               };
               const humiditeList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     humiditeToReturn.push(<th>{data.list[i].main.humidity}</th>);
                 }
                 return humiditeToReturn;
               };
               const ventList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     ventToReturn.push(<th>{data.list[i].wind.speed}</th>);
                 }
                 return ventToReturn;
               };
               const tempList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     const kelvin = data.list[i].main.temp ;
                     const celcius = kelvin - 273.15 ;
                     var n = celcius.toFixed(2);
@@ -62,7 +62,7 @@ export default class Meteo extends Component {
                 return tempToReturn;
               };
               const tempMinList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     const kelvin = data.list[i].main.temp_min ;
                     const celcius = kelvin - 273.15 ;
                     var n = celcius.toFixed(2);
@@ -71,7 +71,7 @@ export default class Meteo extends Component {
                 return tempMinToReturn;
               };
               const tempMaxList = () => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     const kelvin = data.list[i].main.temp_max ;
                     const celcius = kelvin - 273.15 ;
                     var n = celcius.toFixed(2);
@@ -111,10 +111,10 @@ export default class Meteo extends Component {
                     </div>
                 </div>
               <InputCity getTemperature={this.getTemperature}/> <br/>
-              <Table>
+              <Table bordered hover striped variant="dark">
                 <thead>
                     <tr>
-                  <th><FontAwesomeIcon icon={faClock} className="fa-fw"/> <span class="ml-2">Heures</span> </th>
+                  <th><FontAwesomeIcon icon={faClock} className="fa-fw"/> <span class="ml-2">Dates & Heures</span> </th>
                     {this.state.hours}
                     </tr>
                 </thead>
