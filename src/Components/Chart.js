@@ -42,8 +42,8 @@ class Chart extends Component{
             <div className="chart">
                 <Bar
                     data={this.state.chartData}
-                    width={500}
-                    height={250}
+                    width={240}
+                    height={100}
                     options={
                         { 
                             scales: {

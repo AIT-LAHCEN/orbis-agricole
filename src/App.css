@@ -274,7 +274,50 @@ html {
 }
 
 
-.chart{
+/* .chart{
   margin-left: 20%;
   margin-right: 20%;
-} 
+}  */
+
+.content-stat{
+  margin:5%;
+  z-index: inherit;
+}
+
+.list-stat{
+  max-width: 75%;
+  margin-top: 80px;
+  margin-left: 5%;
+}
+
+.list-group-item.active {
+  z-index: inherit;
+}
+
+/* .GlobalDropDown{
+  z-index: inherit;
+}
+.myDropDown{
+  position: relative !important;
+  right: 0 !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+  z-index: inherit !important;
+  display:block !important;
+  width: 100% !important;
+}
+.GlobalDropDown[aria-expanded="true"]{
+  z-index: inherit;
+}
+ */
+
+
+.header-div{
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+
+
