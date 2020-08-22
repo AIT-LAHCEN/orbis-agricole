@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import axios from 'axios';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -19,7 +20,20 @@ class Inscription extends Component {
 
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+        alert('Incsription réussite');
+        axios.post(
+            `http://localhost:8080/users`,
+            values,
+            {
+              headers: {
+                "Content-Type": "application/json"
+              }
+            }
+          ).then(() => {
+            console.log("user added successfully");
+          }).catch(err => {
+            console.log(err);
+          });
     }
   
     render() {
@@ -32,10 +46,10 @@ class Inscription extends Component {
                         <div className="col-12 col-md-9 padd">
                             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group">
-                                    <Label htmlFor="firstname" md={4}>Nom</Label>
+                                    <Label htmlFor="username" md={4}>Identifiant</Label>
                                     <Col md={8}>
-                                        <Control.text model=".firstname" id="firstname" name="firstname"
-                                            placeholder="Entrer votre nom"
+                                        <Control.text model=".username" id="username" name="username"
+                                            placeholder="Entrer votre nom d'utilisatuer"
                                             className="form-control"
                                             validators={{
                                                 required, minLength: minLength(3), maxLength: maxLength(20)
@@ -43,7 +57,7 @@ class Inscription extends Component {
                                             />
                                             <Errors
                                                 className="text-danger"
-                                                model=".firstname"
+                                                model=".username"
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
@@ -54,10 +68,10 @@ class Inscription extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
-                                    <Label htmlFor="lastname" md={4}>Prénom</Label>
+                                    <Label htmlFor="fullname" md={4}>Nom complet</Label>
                                     <Col md={8}>
-                                        <Control.text model=".lastname" id="lastname" name="lastname"
-                                            placeholder="Entrer votre prénom"
+                                        <Control.text model=".fullname" id="fullname" name="fullname"
+                                            placeholder="Entrer votre nom complet"
                                             className="form-control"
                                             validators={{
                                                 required, minLength: minLength(3), maxLength: maxLength(20)
@@ -65,7 +79,7 @@ class Inscription extends Component {
                                             />
                                             <Errors
                                                 className="text-danger"
-                                                model=".lastname"
+                                                model=".fullname"
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
@@ -75,29 +89,7 @@ class Inscription extends Component {
                                             />
                                     </Col>                        
                                 </Row>
-                                <Row className="form-group">
-                                <Label htmlFor="telnum" md={4}>Contact Tel.</Label>
-                                    <Col md={8}>
-                                        <Control.text model=".telnum" id="telnum" name="telnum"
-                                            placeholder="Entrer votre numéro de mobile"
-                                            className="form-control"
-                                            validators={{
-                                                required, minLength: minLength(2), maxLength: maxLength(13), isNumber
-                                            }}
-                                            />
-                                            <Errors
-                                                className="text-danger"
-                                                model=".telnum"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Obligatoire ',
-                                                    minLength: "Doit contenir plus d'un numéro ",
-                                                    maxLength: 'Ne dépassez pas 13 numéros ',
-                                                    isNumber: 'Doit être un nombre'
-                                                }}
-                                            />
-                                    </Col>
-                                </Row>
+                                
                                 <Row className="form-group">
                                     <Label htmlFor="email" md={4}>Email</Label>
                                     <Col md={8}>
@@ -120,23 +112,26 @@ class Inscription extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
-                                    <Col md={{size: 5, offset: 4}}>
-                                        <div className="form-check">
-                                            <Label check>
-                                                <Control.checkbox model=".agree"
-                                                    name="agree"
-                                                    className="form-check-input"
-                                                    /> {' '}
-                                                <strong>Pouvons-nous vous contacter ?</strong>
-                                            </Label>
-                                        </div>
-                                    </Col>
-                                    <Col md={{size: 2, offset: 1}}>
-                                        <Control.select model=".contactType" name="contactType"
-                                                className="form-control">
-                                            <option>Tel.</option>
-                                            <option>Email</option>
-                                        </Control.select>
+                                <Label htmlFor="telephone" md={4}>Contact Tel.</Label>
+                                    <Col md={8}>
+                                        <Control.text model=".telephone" id="telephone" name="telephone"
+                                            placeholder="Entrer votre numéro de mobile"
+                                            className="form-control"
+                                            validators={{
+                                                required, minLength: minLength(2), maxLength: maxLength(13), isNumber
+                                            }}
+                                            />
+                                            <Errors
+                                                className="text-danger"
+                                                model=".telephone"
+                                                show="touched"
+                                                messages={{
+                                                    required: 'Obligatoire ',
+                                                    minLength: "Doit contenir plus d'un numéro ",
+                                                    maxLength: 'Ne dépassez pas 13 numéros ',
+                                                    isNumber: 'Doit être un nombre'
+                                                }}
+                                            />
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
@@ -160,6 +155,27 @@ class Inscription extends Component {
                                             />
                                     </Col>
                                 </Row>
+                                {/* <Row className="form-group">
+                                    <Col md={{size: 5, offset: 4}}>
+                                        <div className="form-check">
+                                            <Label check>
+                                                <Control.checkbox model=".agree"
+                                                    name="agree"
+                                                    className="form-check-input"
+                                                    /> {' '}
+                                                <strong>Pouvons-nous vous contacter ?</strong>
+                                            </Label>
+                                        </div>
+                                    </Col>
+                                    <Col md={{size: 2, offset: 1}}>
+                                        <Control.select model=".contactType" name="contactType"
+                                                className="form-control">
+                                            <option>Tel.</option>
+                                            <option>Email</option>
+                                        </Control.select>
+                                    </Col>
+                                </Row> */}
+                                
                                 <Row className="form-group">
                                     <Label htmlFor="repassword" md={4}>Confirmation de mot de passe</Label>
                                     <Col md={8}>
