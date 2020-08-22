@@ -4,7 +4,7 @@ import { Modal, ModalHeader, ModalBody, FormGroup, Label, Input } from 'reactstr
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTractor, faPaw, faSeedling, faFileAlt, faNewspaper, faChartLine, faThermometerThreeQuarters } from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios';
 
 class Header extends Component {
 
@@ -27,6 +27,20 @@ class Header extends Component {
     handleLogin(event) {
         this.toggleModal();
         event.preventDefault();
+        alert(this.username.value);
+        axios.post(
+            `http://localhost:8080/users`,
+            {"username":this.username.value,"password":this.password.value},
+            {
+              headers: {
+                "Content-Type": "application/json"
+              }
+            }
+          ).then(() => {
+            console.log("user loged in successfully");
+          }).catch(err => {
+            console.log(err);
+          });
     }
 
     render() {

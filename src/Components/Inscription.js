@@ -3,7 +3,7 @@ import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import axios from 'axios';
 
-const required = (val) => val && val.length;
+// const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
@@ -18,7 +18,9 @@ class Inscription extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
     handleSubmit(values) {
+        
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Incsription réussite');
         axios.post(
@@ -31,6 +33,7 @@ class Inscription extends Component {
             }
           ).then(() => {
             console.log("user added successfully");
+            console.log(values);
           }).catch(err => {
             console.log(err);
           });
@@ -44,7 +47,13 @@ class Inscription extends Component {
                         <h3>Remplir vos informations</h3>
                     </div>
                         <div className="col-12 col-md-9 padd">
-                            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                            <LocalForm onSubmit={(values) => this.handleSubmit(values)}
+                                model="user"
+                                validators={{
+                                    '': {
+                                        passwordsMatch: (vals) => vals.password === vals.repassword,
+                                    }
+                                }}>
                                 <Row className="form-group">
                                     <Label htmlFor="username" md={4}>Identifiant</Label>
                                     <Col md={8}>
@@ -52,7 +61,7 @@ class Inscription extends Component {
                                             placeholder="Entrer votre nom d'utilisatuer"
                                             className="form-control"
                                             validators={{
-                                                required, minLength: minLength(3), maxLength: maxLength(20)
+                                                minLength: minLength(3), maxLength: maxLength(20)
                                             }}
                                             />
                                             <Errors
@@ -74,7 +83,7 @@ class Inscription extends Component {
                                             placeholder="Entrer votre nom complet"
                                             className="form-control"
                                             validators={{
-                                                required, minLength: minLength(3), maxLength: maxLength(20)
+                                                minLength: minLength(3), maxLength: maxLength(20)
                                             }}
                                             />
                                             <Errors
@@ -83,7 +92,7 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    minLength: 'Doit contenir plus de 2 caractères',
+                                                    minLength: 'Doit contenir plus de 4 caractères',
                                                     maxLength: 'Ne dépassez pas 20 caractères'
                                                 }}
                                             />
@@ -97,7 +106,7 @@ class Inscription extends Component {
                                             placeholder="Entrer votre adresse e-mail"
                                             className="form-control"
                                             validators={{
-                                                required, validEmail
+                                                validEmail
                                             }}
                                             />
                                             <Errors
@@ -118,7 +127,7 @@ class Inscription extends Component {
                                             placeholder="Entrer votre numéro de mobile"
                                             className="form-control"
                                             validators={{
-                                                required, minLength: minLength(2), maxLength: maxLength(13), isNumber
+                                                minLength: minLength(2), maxLength: maxLength(13), isNumber
                                             }}
                                             />
                                             <Errors
@@ -135,27 +144,6 @@ class Inscription extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
-                                    <Label htmlFor="password" md={4}>Mot de passe</Label>
-                                    <Col md={8}>
-                                        <Control.password model=".password" id="password" name="password"
-                                            placeholder="Entrer votre mot de passe"
-                                            className="form-control"
-                                            validators={{
-                                                required, validPassword
-                                            }}
-                                            />
-                                            <Errors
-                                                className="text-danger"
-                                                model=".password"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Obligatoire ',
-                                                    validPassword: 'Le mot de passe doit contenir au moins un caractère majuscule, minuscule, numéro et un caractère spécial au total 8 caractères ou plus'
-                                                }}
-                                            />
-                                    </Col>
-                                </Row>
-                                {/* <Row className="form-group">
                                     <Col md={{size: 5, offset: 4}}>
                                         <div className="form-check">
                                             <Label check>
@@ -174,16 +162,15 @@ class Inscription extends Component {
                                             <option>Email</option>
                                         </Control.select>
                                     </Col>
-                                </Row> */}
-                                
+                                </Row>
                                 <Row className="form-group">
-                                    <Label htmlFor="repassword" md={4}>Confirmation de mot de passe</Label>
+                                    <Label htmlFor="password" md={4}>Mot de passe</Label>
                                     <Col md={8}>
-                                        <Control.password model=".repassword" id="repassword" name="repassword"
-                                            placeholder="Retaper le mot de passe"
+                                        <Control.password model=".password" id="password" name="password"
+                                            placeholder="Entrer votre mot de passe"
                                             className="form-control"
                                             validators={{
-                                                required
+                                                validPassword
                                             }}
                                             />
                                             <Errors
@@ -191,7 +178,25 @@ class Inscription extends Component {
                                                 model=".password"
                                                 show="touched"
                                                 messages={{
-                                                    required: 'Obligatoire',
+                                                    required: 'Obligatoire ',
+                                                    validPassword: 'Le mot de passe doit contenir au moins un caractère majuscule, minuscule, numéro et un caractère spécial au total 8 caractères ou plus'
+                                                }}
+                                            />
+                                    </Col>
+                                </Row>
+                                <Row className="form-group">
+                                    <Label htmlFor="repassword" md={4}>Confirmation de mot de passe</Label>
+                                    <Col md={8}>
+                                        <Control.password model=".repassword" id="repassword" name="repassword"
+                                            placeholder="Retaper le mot de passe"
+                                            className="form-control"
+                                            />
+                                            <Errors
+                                                className="text-danger"
+                                                model="user"
+                                                show="touched"
+                                                messages={{
+                                                    passwordsMatch: 'Les mots de passe ne correspondent pas'
                                                 }}
                                             />
                                     </Col>
