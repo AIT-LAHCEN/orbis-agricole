@@ -17,11 +17,11 @@ function RenderArticle({article}) {
                 }}>
                 <Media tag="li">
                   <Media left middle>
-                      <Media object style={{width : '30em' }} src={res} alt={article.name} />
+                      <Media object style={{width : '30em' }} src={res} alt={article.titre} />
                   </Media>
                   <Media body className="ml-5">
-                    <Media heading>{article.name}</Media>
-                    <p>{article.corps}</p>
+                    <Media heading>{article.titre}</Media>
+                    <p>{article.contenu}</p>
                   </Media>
                 </Media>
             </FadeTransform>
@@ -35,10 +35,10 @@ const Articledetail = (props) => {
             <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to='/news'>Actualités</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>{props.article.name}</BreadcrumbItem>
+                    <BreadcrumbItem active>{props.article.titre}</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12">
-                    <h3>{props.article.name}</h3>
+                    <h3>{props.article.titre}</h3>
                     <hr/>
                 </div>
             </div>

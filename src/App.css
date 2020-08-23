@@ -32,6 +32,11 @@ li{
   padding-right: 15%;
 }
 
+.morepadd{
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
 .videos{
     background: #161415;
     background-size: cover;
@@ -319,5 +324,19 @@ html {
   font-weight: bold;
 }
 
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
 
+.submit-form {
+  max-width: 50%;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
 

@@ -31,7 +31,7 @@ class News extends Component{
                                 <CardActionArea className="myCard">
                                     <CardMedia className="image" component="img" height="140" image={article.image}/>
                                     <CardContent>
-                                        <Typography gutterBottom className="card-title body" > {article.name} </Typography>
+                                        <Typography gutterBottom className="card-title body" > {article.titre} </Typography>
                                         <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
                                         <Typography variant="body1" color="textPrimary" component="p">
                                                 {article.description}

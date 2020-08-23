@@ -29,7 +29,7 @@ class Header extends Component {
         event.preventDefault();
         alert(this.username.value);
         axios.post(
-            `http://localhost:8080/users`,
+            `http://localhost:8080/login`,
             {"username":this.username.value,"password":this.password.value},
             {
               headers: {

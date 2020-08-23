@@ -3,8 +3,9 @@ import Header from './Header';
 import Accueil from './Accueil';
 import News from './News';
 import Articledetail from './ArticledetailComponent';
-// import Videos from './Videos';
-// import Exploitation from './Exploitation'
+import Addarticle from "./add-article.component";
+import article from "./article.component";
+import articlesList from "./articles-list.component";
 import Footer from './Footer';
 import Meteo from './Meteo';
 import Gestion from './Gestion';
@@ -53,13 +54,14 @@ class Main extends Component {
                   <Route path='/signup' component={Inscription} />
                   <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
                   <Route path='/news/:articleId' component={ArticleWithId} />
+                  <Route exact path="/articles" component={articlesList} />
+                  <Route exact path="/add" component={Addarticle} />
+                  <Route path="/articles/:id" component={article} />
                   <Route exact path='/home' component={Accueil} />
                   <Redirect to="/home" />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
-          {/* <Exploitation/>
-          <Videos/> */}
           <Footer/>
         </React.Fragment>
       
