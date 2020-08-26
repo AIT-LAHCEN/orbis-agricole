@@ -6,8 +6,10 @@ import articleDataService from "../services/article.service";
 import {Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { FormControl } from "react-bootstrap";
 
+var imageLink;
 
 function Dropzone({ID_index}) {  
+  
   const fetchArticles = () => {
     axios.get("http://localhost:8080/api/Articles").then(res => {
       console.log(res.data[res.data.length-1].id);
@@ -21,7 +23,8 @@ function Dropzone({ID_index}) {
   const onDrop = useCallback(acceptedFiles => {
 
     const file = acceptedFiles[0];
-    console.log(file);
+    console.log(file.name);
+    imageLink=file.name;
     
     const formData = new FormData();
     formData.append("file",file);
@@ -75,6 +78,7 @@ export default class Addarticle extends Component {
       theme: "",
       description: "",
       contenu: "", 
+      articleImageLink: "",
       published: false,
 
       submitted: false
@@ -110,7 +114,8 @@ export default class Addarticle extends Component {
       title: this.state.title,
       theme: this.state.theme,
       description: this.state.description,
-      contenu: this.state.contenu
+      contenu: this.state.contenu,
+      articleImageLink: imageLink
     };
 
     articleDataService.create(data)
@@ -121,11 +126,12 @@ export default class Addarticle extends Component {
           theme: response.data.theme,
           description: response.data.description,
           contenu: response.data.contenu,
+          articleImageLink: response.data.articleImageLink,
           published: response.data.published,
 
           submitted: true
         });
-        console.log(response.data);
+        alert(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -139,6 +145,7 @@ export default class Addarticle extends Component {
       theme: "",
       description: "",
       contenu: "",
+      articleImageLink: "",
       published: false,
 
       submitted: false
