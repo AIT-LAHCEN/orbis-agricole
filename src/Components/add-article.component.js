@@ -1,66 +1,45 @@
-// import axios from 'axios';
+import axios from 'axios';
 import {useDropzone} from 'react-dropzone'
 // import React, { Component, useState, useEffect, useCallback } from "react";
-import React, { Component, useCallback } from "react";
+import React, { Component, useEffect, useCallback } from "react";
 import articleDataService from "../services/article.service";
 import {Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { FormControl } from "react-bootstrap";
 
 
-// const Articles = () => {
+function Dropzone({ID_index}) {  
+  const fetchArticles = () => {
+    axios.get("http://localhost:8080/api/Articles").then(res => {
+      console.log(res.data[res.data.length-1].id);
+      ID_index = res.data[res.data.length-1].id + 1;
+    });
+  }
+  useEffect(() => {
+      fetchArticles();
+  }, []);
 
-//   const [articles, setArticles ] = useState([]);
-
-//   const fetchArticles = () => {
-//     axios.get("http://localhost:8080/users").then(res => {
-//       console.log(res);
-//       setArticles(res.data);
-//     });
-//   }
-      
-//   useEffect(() => {
-//     fetchArticles();
-//   }, []);
-
-//   return articles.map((article, index) => {
-//     return (
-//       <div key={index} className="padd">
-//         {article.articleId ? <img src={`http://localhost:8080/api/v1/article/${article.articleId}/image/download`} alt={article.title}/> : null }
-//         <br/>
-//         <br/>
-//         <h1>{article.title}</h1>
-//         <p>{article.articleId}</p>
-//         <Dropzone {...article}/>
-//         <br/>
-//       </div>
-//     )
-//   })
-// };
-
-function Dropzone({articleId}) {
   const onDrop = useCallback(acceptedFiles => {
 
-    // const file = acceptedFiles[0];
-    // console.log(file);
+    const file = acceptedFiles[0];
+    console.log(file);
     
-    // const formData = new FormData();
-    // formData.append("file",file);
+    const formData = new FormData();
+    formData.append("file",file);
 
-    // axios.post(
-    //   `http://localhost:8080/api/v1/article/${articleId}/image/upload`,
-    //   formData,
-    //   {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data"
-    //     }
-    //   }
-    // ).then(() => {
-    //   console.log("file uploaded successfully");
-    // }).catch(err => {
-    //   console.log(err);
-    // });
-  //}, [articleId]);
-  }, []);
+    axios.post(
+      `http://localhost:8080/api/v1/article/${ID_index}/image/upload`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }
+    ).then(() => {
+      console.log("file uploaded successfully");
+    }).catch(err => {
+      console.log(err);
+    });
+  }, [ID_index]);
   
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
@@ -84,6 +63,7 @@ export default class Addarticle extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeTheme = this.onChangeTheme.bind(this);
     this.onChangeContenu = this.onChangeContenu.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.savearticle = this.savearticle.bind(this);
@@ -92,6 +72,7 @@ export default class Addarticle extends Component {
     this.state = {
       id: null,
       title: "",
+      theme: "",
       description: "",
       contenu: "", 
       published: false,
@@ -103,6 +84,12 @@ export default class Addarticle extends Component {
   onChangeTitle(e) {
     this.setState({
       title: e.target.value
+    });
+  }
+
+  onChangeTheme(e) {
+    this.setState({
+      theme: e.target.value
     });
   }
 
@@ -121,6 +108,7 @@ export default class Addarticle extends Component {
   savearticle() {
     var data = {
       title: this.state.title,
+      theme: this.state.theme,
       description: this.state.description,
       contenu: this.state.contenu
     };
@@ -130,6 +118,7 @@ export default class Addarticle extends Component {
         this.setState({
           id: response.data.id,
           title: response.data.title,
+          theme: response.data.theme,
           description: response.data.description,
           contenu: response.data.contenu,
           published: response.data.published,
@@ -147,6 +136,7 @@ export default class Addarticle extends Component {
     this.setState({
       id: null,
       title: "",
+      theme: "",
       description: "",
       contenu: "",
       published: false,
@@ -203,11 +193,11 @@ export default class Addarticle extends Component {
               <FormGroup row>
               <Label htmlFor="theme" md={2}>Theme</Label>
                 <Col md={10}>
-                  <FormControl as="select">
-                    <option>cultures</option>
-                    <option>élevage</option>
-                    <option>matériels</option>
-                    <option>gestion</option>
+                  <FormControl as="select" value={this.state.value} onChange={this.onChangeTheme}>
+                    <option value="cultures">Cultures</option>
+                    <option value="élevage">Élevage</option>
+                    <option value="matériels">Tracteurs et Matériels</option>
+                    <option value="gestion">Gestion et Droit</option>
                   </FormControl>
                 </Col>
               </FormGroup>
