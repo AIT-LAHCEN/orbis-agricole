@@ -10,7 +10,7 @@ const Articles = () => {
       console.log(res);
       setArticles(res.data);
     });
-    axios.get("http://localhost:8080/api/v1/article/10/image/download").then(res => {
+    axios.get("http://localhost:8080/api/v1/article/24/image/download").then(res => {
       console.log("tesswira: ",res);
     });
   }
