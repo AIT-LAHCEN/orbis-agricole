@@ -5,7 +5,7 @@ export default class article extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeContenu = this.onChangeContenu.bind(this);
     this.getarticle = this.getarticle.bind(this);
     this.updatePublished = this.updatePublished.bind(this);

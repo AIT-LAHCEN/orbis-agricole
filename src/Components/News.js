@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component, useEffect, useState} from 'react';
+import axios from 'axios';
 import { Card, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,65 +8,66 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { FadeTransform } from 'react-animation-components';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class News extends Component{
+const Articles = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  const [articles, setArticles ] = useState([]);
 
+  const fetchArticles = () => {
+    axios.get("http://localhost:8080/api/v1/article").then(res => {
+      // console.log(Object.values(res.data));
+      setArticles(Object.values(res.data));
+    });
+  }
+
+      
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
+  return articles.map((article, index) => {
+    return (
+      <div key={article.id} className="col-12 col-md-5 m-1">
+      <FadeTransform in
+          transformProps={{
+          exitTransform: 'scale(0.5) translateY(-50%)'
+      }}>
+          <Card>
+              <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
+                  <CardActionArea className="myCard">
+                      {article.id ? <CardMedia className="image" component="img" height="140" image={`http://localhost:8080/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
+                      <CardContent>
+                          <Typography gutterBottom className="card-title body" > {article.title} </Typography>
+                          <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
+                          <Typography variant="body1" color="textPrimary" component="p">
+                                  {article.description}
+                          </Typography>
+                          <br></br>
+                          <Typography variant="body1" color="textSecondary" component="p">
+                                  {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse("2020-10-16T17:57:28.556094Z")))}
+                          </Typography>
+                      </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                      {/* <Link href="#">Card Link </Link> */}
+                      <Button size="small" color="default" className="cardButton">En savoir plus</Button>
+                  </CardActions>
+              </Link>
+          </Card>
+      </FadeTransform>
+  </div>
+    )
+  })
+};
+
+export default class News extends Component {
     render(){
-
-        const news = this.props.articles.map((article) => {
-            return (
-              <div key={article.id} className="col-12 col-md-5 m-1">
-                <FadeTransform in
-                transformProps={{
-                    exitTransform: 'scale(0.5) translateY(-50%)'
-                }}>
-                    <Card>
-                        <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
-                            <CardActionArea className="myCard">
-                                <CardMedia className="image" component="img" height="140" image={article.image}/>
-                                <CardContent>
-                                    <Typography gutterBottom className="card-title body alignleft" > {article.titre} </Typography>
-                                    <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
-                                    <Typography variant="body1" color="textPrimary" component="p">
-                                            {article.description}
-                                    </Typography>
-                                    <br></br>
-                                    <Typography variant="body1" color="textSecondary" component="p">
-                                            {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(article.date)))}
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                {/* <Link href="#">Card Link </Link> */}
-                                <Button size="small" color="default" className="cardButton">En savoir plus</Button>
-                            </CardActions>
-
-
-                            {/* <CardImg object className="image" src={article.image} alt={article.name} />
-                            <CardTitle>{article.name}</CardTitle>
-                            <CardBody className="CardBody">
-                                <CardText>{article.description}</CardText>
-                                <p>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(article.date)))}</p>
-                            </CardBody> */}
-                        </Link>
-                    </Card>
-                </FadeTransform>
-              </div>
-            );
-        });
-
         return(
-            <div className="container news">
-                <div className="column">
+          <div className="container news">
+              <div className="column">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Actualités</BreadcrumbItem>
@@ -76,11 +78,9 @@ class News extends Component{
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center">
-                    {news}
+                <Articles/>
                 </div>
-            </div>
+          </div>  
         );
     }
 }
-
-export default News;

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {useDropzone} from 'react-dropzone'
-// import React, { Component, useState, useEffect, useCallback } from "react";
 import React, { Component, useEffect, useCallback } from "react";
 import articleDataService from "../services/article.service";
 import {Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
@@ -12,7 +11,7 @@ function Dropzone({ID_index}) {
   
   const fetchArticles = () => {
     axios.get("http://localhost:8080/api/Articles").then(res => {
-      console.log(res.data[res.data.length-1].id);
+      // console.log(res.data[res.data.length-1].id);
       ID_index = res.data[res.data.length-1].id + 1;
     });
   }
@@ -23,7 +22,7 @@ function Dropzone({ID_index}) {
   const onDrop = useCallback(acceptedFiles => {
 
     const file = acceptedFiles[0];
-    console.log(file.name);
+    // console.log(file.name);
     imageLink=file.name;
     
     const formData = new FormData();
@@ -38,7 +37,8 @@ function Dropzone({ID_index}) {
         }
       }
     ).then(() => {
-      console.log("file uploaded successfully");
+      // console.log("file uploaded successfully");
+      alert("Image chargé avec succès");
     }).catch(err => {
       console.log(err);
     });
@@ -201,7 +201,7 @@ export default class Addarticle extends Component {
               <Label htmlFor="theme" md={2}>Theme</Label>
                 <Col md={10}>
                   <FormControl as="select" value={this.state.value} onChange={this.onChangeTheme}>
-                    <option value="cultures">Cultures</option>
+                    <option selected value="cultures">Cultures</option>
                     <option value="élevage">Élevage</option>
                     <option value="matériels">Tracteurs et Matériels</option>
                     <option value="gestion">Gestion et Droit</option>

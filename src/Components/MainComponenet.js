@@ -33,11 +33,11 @@ class Main extends Component {
 
   render() {
 
-    const ArticleWithId = ({match}) => {
-      return(
-        <Articledetail article={this.props.articles.filter((article) => article.id === parseInt(match.params.articleId,10))[0]} />
-      );
-    }
+    // const ArticleWithId = ({match}) => {
+    //   return(
+    //     <Articledetail article={this.props.articles.filter((article) => article.id === parseInt(match.params.articleId,10))[0]} />
+    //   );
+    // }
 
     return(
         <React.Fragment>
@@ -53,7 +53,7 @@ class Main extends Component {
                   <Route path='/elevage' component={Elevage} />
                   <Route path='/signup' component={Inscription} />
                   <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
-                  <Route path='/news/:articleId' component={ArticleWithId} />
+                  <Route path='/news/:id' component={Articledetail} />
                   <Route exact path="/articles" component={articlesList} />
                   <Route exact path="/add" component={Addarticle} />
                   <Route path="/articles/:id" component={article} />
