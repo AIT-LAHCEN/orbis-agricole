@@ -67,10 +67,10 @@ html {
   padding-top: 48px;
   padding-bottom: 48px;
   color: aliceblue;
-  background-color: #161415;
   font-size: 14px;
   text-align: center;
   position: relative;
+  background-color: #161415;
 }
 
 .footer a, .footer a:visited { color: #525252; }

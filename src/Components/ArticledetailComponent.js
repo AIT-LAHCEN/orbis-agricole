@@ -3,6 +3,7 @@ import articleDataService from "../services/article.service";
 import { Media, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { FadeTransform } from 'react-animation-components';
+import Loader from 'react-loader-spinner';
 
 export default class Articledetail extends Component {
   constructor(props) {
@@ -54,6 +55,14 @@ export default class Articledetail extends Component {
                 </div>
             </div>
             <div className="row">
+            <Loader
+                            type="TailSpin"
+                            color="#00BFFF"
+                            height={180}
+                            width={180}
+                            timeout={3000} //3 secs
+                    
+                        />
             {currentarticle ? (
             <div key={currentarticle.id} className="col-12 mt-5">
             <FadeTransform

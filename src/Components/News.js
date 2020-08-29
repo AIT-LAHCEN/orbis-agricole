@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { FadeTransform } from 'react-animation-components';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loader from 'react-loader-spinner';
 
 const Articles = () => {
 
@@ -78,6 +79,14 @@ export default class News extends Component {
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center">
+                <Loader
+                            type="TailSpin"
+                            color="#00BFFF"
+                            height={180}
+                            width={180}
+                            timeout={3000} //3 secs
+                    
+                        />
                 <Articles/>
                 </div>
           </div>  

@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import { FadeTransform } from 'react-animation-components';
+import Loader from 'react-loader-spinner';
 
 const Articles = () => {
 
@@ -66,6 +67,14 @@ export default class News extends Component {
         return(
           <div className="container news">
                 <div className="row d-flex justify-content-center">
+                <Loader
+                            type="TailSpin"
+                            color="#00BFFF"
+                            height={180}
+                            width={180}
+                            timeout={3000} //3 secs
+                    
+                        />
                 <Articles/>
                 </div>
           </div>  

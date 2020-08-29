@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return(
         <MDBFooter className="footer">
-            <MDBContainer fluid className="footer">
-                <MDBRow className="div-fouter">
-                    <MDBCol md="3">
+            <MDBContainer fluid className="container">
+                <MDBRow className="row justify-content-center">
+                    <MDBCol col-4 offset-1 col-sm-2>
                         <h5 className="title-fouter">Aide</h5>
                         <div className="ul-footer">
                             <ul>
@@ -22,7 +22,7 @@ const Footer = () => {
                             </ul>
                         </div>   
                     </MDBCol>
-                    <MDBCol md="6">
+                    <MDBCol className="col-7 col-sm-5">
                         <h5 className="title-fouter">Services</h5>
                         <div className="ul-footer">
                             <ul>
@@ -60,7 +60,7 @@ const Footer = () => {
                         </div>
                         
                     </MDBCol>
-                    <MDBCol md="3">
+                    <MDBCol className="col-12 col-sm-4">
                         <h5 className="title-fouter">Les sites du groupe</h5>
                         <div className="ul-footer">
                             <ul>
@@ -82,7 +82,7 @@ const Footer = () => {
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>
-            <MDBContainer>
+            <MDBContainer className="footer-copyright text-center py-3">
                 <a className="btn-floating btn-lg btn-fb" href="http://www.facebook.com/"><i className="fa fa-facebook"></i></a>
                 <a className="btn-floating btn-lg btn-tw" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
             </MDBContainer>
