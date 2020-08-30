@@ -22,7 +22,7 @@ const Articles = () => {
     const fetchArticles = () => {
       axios.get("http://localhost:8080/api/v1/article").then(res => {
         // console.log(Object.values(res.data));
-        setArticles(res.data.filter((article) => article.theme === 'cultures'));
+        setArticles(res.data.filter((article) => article.theme === 'cultures' && article.published));
       });
     }
   
@@ -50,7 +50,7 @@ const Articles = () => {
                             </Typography>
                             <br></br>
                             <Typography variant="body1" color="textSecondary" component="p">
-                                    {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse("2020-10-16T17:57:28.556094Z")))}
+                                    {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(article.date)))}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
