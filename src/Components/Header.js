@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { Button, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import { Button, Nav, Navbar, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { Modal, ModalHeader, ModalBody, FormGroup, Label, Input } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTractor, faPaw, faSeedling, faFileAlt, faNewspaper, faChartLine, faThermometerThreeQuarters } from '@fortawesome/free-solid-svg-icons';
+import { faSearch,faTractor, faPaw, faSeedling, faFileAlt, faNewspaper, faChartLine, faThermometerThreeQuarters } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 class Header extends Component {
@@ -53,7 +53,16 @@ class Header extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <div className="navbar-nav login-bar">
                         <Form inline >
-                            <FormControl type="text" placeholder="Search" className="mr-sm-1" />
+                            <InputGroup>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>
+                                    <a href="nothing">
+                                    <FontAwesomeIcon icon={faSearch} />
+                                    </a>
+                                    </InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <FormControl type="text" placeholder="Search" className="mr-sm-1" />
+                            </InputGroup>
                         </Form>
                         <ul className="nav navbar-nav navbar-right">
                             <li><NavLink to="/signup"><Button className="button" variant="outline-success"> S'inscrire</Button></NavLink></li>

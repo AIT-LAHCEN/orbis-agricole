@@ -153,6 +153,12 @@ export default class articlesList extends Component {
               </div>
               <div>
                 <label>
+                  <strong>Thème:</strong>
+                </label>{" "}
+                {currentarticle.theme}
+              </div>
+              <div>
+                <label>
                   <strong>contenu:</strong>
                 </label>{" "}
                 {currentarticle.contenu}

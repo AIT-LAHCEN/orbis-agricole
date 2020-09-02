@@ -75,7 +75,7 @@ export default class Addarticle extends Component {
     this.state = {
       id: null,
       title: "",
-      theme: "",
+      theme: "cultures",
       description: "",
       contenu: "", 
       articleImageLink: "",

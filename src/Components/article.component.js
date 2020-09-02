@@ -6,6 +6,7 @@ export default class article extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeTheme = this.onChangeTheme.bind(this);
     this.onChangeContenu = this.onChangeContenu.bind(this);
     this.getarticle = this.getarticle.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
@@ -17,6 +18,7 @@ export default class article extends Component {
         id: null,
         title: "",
         description: "",
+        theme: "",
         contenu: "",
         published: false
       },
@@ -52,6 +54,17 @@ export default class article extends Component {
     }));
   }
 
+  onChangeTheme(e) {
+    const theme = e.target.value;
+    
+    this.setState(prevState => ({
+      currentarticle: {
+        ...prevState.currentarticle,
+        theme : theme
+      }
+    }));
+  }
+
   onChangeContenu(e) {
     const contenu = e.target.value;
     
@@ -81,6 +94,7 @@ export default class article extends Component {
       id: this.state.currentarticle.id,
       title: this.state.currentarticle.title,
       description: this.state.currentarticle.description,
+      theme: this.state.currentarticle.theme,
       contenu: this.state.currentarticle.contenu,
       published: status
     };
@@ -147,7 +161,7 @@ export default class article extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="description">description</label>
+                <label htmlFor="description">Description</label>
                 <input
                   type="text"
                   className="form-control"
@@ -157,9 +171,22 @@ export default class article extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="contenu">contenu</label>
-                <input
-                  type="text"
+                <label htmlFor="theme">Thème</label>
+                <select
+                  className="form-control"
+                  id="theme"
+                  value={currentarticle.theme}
+                  onChange={this.onChangeTheme}>
+                  <option value="cultures">Cultures</option>
+                  <option value="élevage">Élevage</option>
+                  <option value="matériels">Tracteurs et Matériels</option>
+                  <option value="gestion">Gestion et Droit</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="contenu">Contenu</label>
+                <textarea
+                  type="textarea"
                   className="form-control"
                   id="contenu"
                   value={currentarticle.contenu}
@@ -203,7 +230,7 @@ export default class article extends Component {
               className="badge badge-success"
               onClick={this.updatearticle}
             >
-              Changer
+              Modifier
             </button>
             <p>{this.state.message}</p>
           </div>
