@@ -20,6 +20,7 @@ export default class article extends Component {
         description: "",
         theme: "",
         contenu: "",
+        articleImageLink : "",
         published: false
       },
       message: ""
@@ -96,6 +97,7 @@ export default class article extends Component {
       description: this.state.currentarticle.description,
       theme: this.state.currentarticle.theme,
       contenu: this.state.currentarticle.contenu,
+      articleImageLink: this.state.currentarticle.articleImageLink,
       published: status
     };
 

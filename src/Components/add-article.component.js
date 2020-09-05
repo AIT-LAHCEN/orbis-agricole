@@ -1,65 +1,9 @@
-import axios from 'axios';
-import {useDropzone} from 'react-dropzone'
-import React, { Component, useEffect, useCallback } from "react";
+import React, { Component } from "react";
 import articleDataService from "../services/article.service";
 import {Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { FormControl } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 
-var imageLink;
-
-function Dropzone({ID_index}) {  
-  
-  const fetchArticles = () => {
-    axios.get("http://localhost:8080/api/Articles").then(res => {
-      // console.log(res.data[res.data.length-1].id);
-      ID_index = res.data[res.data.length-1].id + 1;
-    });
-  }
-  useEffect(() => {
-      fetchArticles();
-  }, []);
-
-  const onDrop = useCallback(acceptedFiles => {
-
-    const file = acceptedFiles[0];
-    // console.log(file.name);
-    imageLink=file.name;
-    
-    const formData = new FormData();
-    formData.append("file",file);
-
-    axios.post(
-      `http://localhost:8080/api/v1/article/${ID_index}/image/upload`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      }
-    ).then(() => {
-      // console.log("file uploaded successfully");
-      alert("Image chargé avec succès");
-    }).catch(err => {
-      console.log(err);
-    });
-  }, [ID_index]);
-  
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-
-  return (
-    <FormGroup row {...getRootProps()}>
-      <Label htmlFor="theme" md={2}>Image</Label> 
-      <Col md={10}>
-        <input {...getInputProps()} />
-          {
-            isDragActive ?
-              <p>Déposez l'image ici ...</p> :
-              <p>Faites glisser et déposez l'image de votre article ici, ou bien cliquez pour la sélectionner</p>
-          }
-      </Col>
-    </FormGroup>
-  )
-}
 
 export default class Addarticle extends Component {
 
@@ -115,7 +59,7 @@ export default class Addarticle extends Component {
       theme: this.state.theme,
       description: this.state.description,
       contenu: this.state.contenu,
-      articleImageLink: imageLink
+      articleImageLink: ""
     };
 
     articleDataService.create(data)
@@ -131,7 +75,7 @@ export default class Addarticle extends Component {
 
           submitted: true
         });
-        alert(response.data);
+        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -168,7 +112,7 @@ export default class Addarticle extends Component {
           </div>
         ) : (
           <div className="col-12 col-md-9 padd">
-            <Form onSubmit={this.savearticle}>
+            <Form>
               <FormGroup row>
                 <Label htmlFor="title" md={2}>Titre</Label>
                 <Col md={10}>
@@ -223,12 +167,14 @@ export default class Addarticle extends Component {
                   />
                 </Col>
               </FormGroup>
-              <Dropzone/>
+              
               <FormGroup row>
                 <Col md={{size: 10, offset: 2}}>
-                  <Button type="submit" className="btn btn-success">
-                    Ajouter
-                  </Button>
+                  <NavLink to="/addImage">
+                    <Button type="submit" className="btn btn-success" onClick={this.savearticle}>
+                      Next
+                    </Button>
+                  </NavLink>
                 </Col>
               </FormGroup>
             </Form>
