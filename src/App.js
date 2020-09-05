@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import Main from './Components/MainComponenet';
+import EspaceAdmim from './Components/EspaceAdmin';
 import { BrowserRouter } from 'react-router-dom';
 import "./App.css";
 import { Provider } from 'react-redux';
@@ -16,6 +17,7 @@ class App extends Component {
         <BrowserRouter>
           <div className="App">
             <Main/>
+            <EspaceAdmim/>
           </div>
         </BrowserRouter>
       </Provider>

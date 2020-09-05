@@ -3,9 +3,6 @@ import Header from './Header';
 import Accueil from './Accueil';
 import News from './News';
 import Articledetail from './ArticledetailComponent';
-import Addarticle from "./add-article.component";
-import article from "./article.component";
-import articlesList from "./articles-list.component";
 import Footer from './Footer';
 import Meteo from './Meteo';
 import Gestion from './Gestion';
@@ -14,7 +11,6 @@ import Cours_Marches from './Marche_Stats';
 import Cultures from './Cultures';
 import Elevage from './Elevage';
 import Inscription from './Inscription';
-import addImage from './addImage';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -55,10 +51,6 @@ class Main extends Component {
                   <Route path='/signup' component={Inscription} />
                   <Route exact path='/news' component={() => <News articles={this.props.articles}/>} />
                   <Route path='/news/:id' component={Articledetail} />
-                  <Route exact path="/articles" component={articlesList} />
-                  <Route exact path="/add" component={Addarticle} />
-                  <Route exact path="/addImage" component={addImage} />
-                  <Route path="/articles/:id" component={article} />
                   <Route exact path='/home' component={Accueil} />
                   <Redirect to="/home" />
               </Switch>

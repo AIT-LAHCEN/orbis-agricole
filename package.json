@@ -21,7 +21,7 @@
     "gh-pages": "^3.1.0",
     "install": "^0.13.0",
     "jQuery": "^1.7.4",
-    "jquery": ">=3.5.0",
+    "jquery": "^3.5.1",
     "mdbreact": "^4.27.0",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
