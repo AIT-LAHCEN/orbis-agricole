@@ -101,7 +101,7 @@ export default class Addarticle extends Component {
       
       <div className="row row-content">
         <div className="col-12 morepadd">
-          <h3>Ajouter votre article</h3>
+          <h3>Ajouter un article (Etape 1/2...)</h3>
         </div>
         {this.state.submitted ? (
           <div>
@@ -170,9 +170,9 @@ export default class Addarticle extends Component {
               
               <FormGroup row>
                 <Col md={{size: 10, offset: 2}}>
-                  <NavLink to="/addImage">
+                  <NavLink to="/admin/addImage">
                     <Button type="submit" className="btn btn-success" onClick={this.savearticle}>
-                      Next
+                      Suivant
                     </Button>
                   </NavLink>
                 </Col>

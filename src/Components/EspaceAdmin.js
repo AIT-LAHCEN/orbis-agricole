@@ -4,6 +4,8 @@ import Addarticle from "./add-article.component";
 import article from "./article.component";
 import articlesList from "./articles-list.component";
 import addImage from './addImage';
+import { faTools } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class EspaceAdmin extends Component {
     render() {
@@ -11,17 +13,17 @@ class EspaceAdmin extends Component {
         <Router>
           <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-              <a href="/articles" className="navbar-brand">
-                Espace Admin
+              <a href="/admin/articles" className="navbar-brand">
+              <FontAwesomeIcon icon={faTools} /> Espace Admin
               </a>
               <div className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link to={"/articles"} className="nav-link">
-                    Liste de articles
+                  <Link to={"/admin/articles"} className="nav-link">
+                    Liste des articles
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/add"} className="nav-link">
+                  <Link to={"/admin/add"} className="nav-link">
                     Ajouter un article
                   </Link>
                 </li>
@@ -30,10 +32,10 @@ class EspaceAdmin extends Component {
   
             <div className="container mt-3">
               <Switch>
-                <Route exact path="/articles" component={articlesList} />
-                <Route exact path="/add" component={Addarticle} />
-                <Route exact path="/addImage" component={addImage} />
-                <Route path="/articles/:id" component={article} />
+                <Route exact path="/admin/articles" component={articlesList} />
+                <Route exact path="/admin/add" component={Addarticle} />
+                <Route exact path="/admin/addImage" component={addImage} />
+                <Route path="/admin/articles/:id" component={article} />
               </Switch>
             </div>
           </div>

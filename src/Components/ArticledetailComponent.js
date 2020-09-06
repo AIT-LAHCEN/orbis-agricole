@@ -75,7 +75,7 @@ export default class Articledetail extends Component {
                         {currentarticle.id ? <Media object style={{width : '30em' }} src={`http://localhost:8080/api/v1/article/${currentarticle.id}/image/download`} alt={currentarticle.title}/> : null }
                     </Media>
                     <Media body className="ml-5">
-                    <Media heading>{currentarticle.title}</Media>
+                    <Media heading>{currentarticle.description}</Media>
                     <p>{currentarticle.contenu}</p>
                     </Media>
                 </Media>

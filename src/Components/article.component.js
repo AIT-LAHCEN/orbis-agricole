@@ -136,7 +136,7 @@ export default class article extends Component {
     articleDataService.delete(this.state.currentarticle.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/articles')
+        this.props.history.push('/admin/articles')
       })
       .catch(e => {
         console.log(e);

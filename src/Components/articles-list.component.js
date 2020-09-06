@@ -171,7 +171,7 @@ export default class articlesList extends Component {
               </div>
 
               <Link
-                to={"/articles/" + currentarticle.id}
+                to={"/admin/articles/" + currentarticle.id}
                 className="badge badge-warning"
               >
                 Modifier

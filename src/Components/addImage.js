@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useCallback } from "react";
-import { FormGroup, Label, Col, Button } from 'reactstrap';
+import { FormGroup, Col, Button } from 'reactstrap';
 import axios from 'axios';
 import {useDropzone} from 'react-dropzone';
 import { NavLink } from 'react-router-dom';
@@ -79,17 +79,16 @@ function Dropzone({ID_index}) {
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <FormGroup row {...getRootProps()}>
-      <Label htmlFor="theme" md={2}>Image</Label> 
-      <Col md={10}>
-        <input {...getInputProps()} />
-          {
-            isDragActive ?
-              <p>Déposez l'image ici ...</p> :
-              <p>Faites glisser et déposez l'image de votre article ici, ou bien cliquez pour la sélectionner</p>
-          }
-      </Col>
-    </FormGroup>
+    // <div className="row row-content">
+        
+      <div className="col-12 morepadd" {...getRootProps()}>
+          <input {...getInputProps()} />
+            {
+              isDragActive ?
+                <p>Déposez l'image ici ...</p> :
+                <p>Faites glisser et déposez l'image de votre article ici, ou bien cliquez pour la sélectionner</p>
+            }
+      </div>
   )
 }
 
@@ -99,10 +98,13 @@ export default class addImage extends Component {
     render(){
         return (
             <React.Fragment>
+                <div className="col-12 morepadd">
+                  <h3>Ajouter un article (Etape 2/2...)</h3>
+                </div>
                 <Dropzone/>
                 <FormGroup row>
-                    <Col md={{size: 10, offset: 2}}>
-                    <NavLink to="/add">
+                    <Col md={{size: 5, offset: 5}}>
+                    <NavLink to="/admin/add">
                         <Button type="submit" className="btn btn-success">
                         Terminer
                         </Button>
