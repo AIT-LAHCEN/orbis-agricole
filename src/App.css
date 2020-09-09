@@ -8,14 +8,13 @@ li{
 }
 
 .title { 
-    color: #45ad26; 
-    font-family: "Great Vibes", cursive; 
-    font-size: 1.8em; 
-    font-weight: normal; 
-    text-align: center; 
-    display: flex;
-    align-items: center;
-    margin-left: 6em; 
+    text-decoration-style: none;
+}
+
+.titleImg{
+  width: 55%;
+  padding-left: 20%;
+  margin-left: 40%;
 }
 
 .title:hover {
@@ -27,9 +26,18 @@ li{
   padding-right: 2%;
 }
 
+.inscription{
+  padding-left: 11%;
+}
+
 .padd{
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.padd2{
+  padding-left: 23%;
+  padding-right: 6%;
 }
 
 .morepadd{
@@ -340,3 +348,35 @@ html {
   margin: auto;
 }
 
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}

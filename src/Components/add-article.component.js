@@ -111,7 +111,7 @@ export default class Addarticle extends Component {
             </button>
           </div>
         ) : (
-          <div className="col-12 col-md-9 padd">
+          <div className="col-12 col-md-9 padd2">
             <Form>
               <FormGroup row>
                 <Label htmlFor="title" md={2}>Titre</Label>

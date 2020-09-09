@@ -14,8 +14,9 @@ var title2;
 
 function Dropzone({ID_index}) {  
     
-    const fetchArticles = () => {
-        axios.get("http://localhost:8080/api/Articles").then(res => {
+    const fetchArticles = async () => {
+      await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+      await axios.get("http://localhost:8080/api/Articles").then(res => {
             console.log(res.data[res.data.length-1]);
           console.log(res.data[res.data.length-1].id);
           ID_index = res.data[res.data.length-1].id;

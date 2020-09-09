@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import { Button, Nav, Navbar, Form, FormControl, InputGroup } from 'react-bootstrap';
-import { Modal, ModalHeader, ModalBody, FormGroup, Label, Input } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch,faTractor, faPaw, faSeedling, faFileAlt, faNewspaper, faChartLine, faThermometerThreeQuarters } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
 
 class Header extends Component {
 
@@ -14,34 +12,9 @@ class Header extends Component {
         this.state = {
             isModalOpen: false
         };
-        this.toggleModal = this.toggleModal.bind(this);
-        this.handleLogin = this.handleLogin.bind(this);
     }
 
-    toggleModal() {
-        this.setState({
-            isModalOpen: !this.state.isModalOpen
-        });
-    }
     
-    handleLogin(event) {
-        this.toggleModal();
-        event.preventDefault();
-        alert(this.username.value);
-        axios.post(
-            `http://localhost:8080/login`,
-            {"username":this.username.value,"password":this.password.value},
-            {
-              headers: {
-                "Content-Type": "application/json"
-              }
-            }
-          ).then(() => {
-            console.log("user loged in successfully");
-          }).catch(err => {
-            console.log(err);
-          });
-    }
 
     render() {
 
@@ -66,7 +39,8 @@ class Header extends Component {
                         </Form>
                         <ul className="nav navbar-nav navbar-right">
                             <li><NavLink to="/signup"><Button className="button" variant="outline-success"> S'inscrire</Button></NavLink></li>
-                            <li><NavLink to="/login"><Button outline onClick={this.toggleModal} className="button" variant="outline-success"> Connexion</Button></NavLink></li>
+                            {/* <li><NavLink to="/login"><Button outline onClick={this.toggleModal} className="button" variant="outline-success"> Connexion</Button></NavLink></li> */}
+                            <li><NavLink to="/login"><Button className="button" variant="outline-success"> Connexion</Button></NavLink></li>
                         </ul>
                     </div>
                 </Navbar.Collapse>
@@ -86,27 +60,6 @@ class Header extends Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}> 
-                <ModalHeader toggle={this.toggleModal}>Connexion</ModalHeader>
-                <ModalBody>
-                    <Form onSubmit={this.handleLogin}>
-                        <FormGroup>
-                            <Label htmlFor="username">Username</Label>
-                            <Input type="text" id="username" name="username" innerRef={(input) => this.username = input} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor="password">Password</Label>
-                            <Input type="password" id="password" name="password" innerRef={(input) => this.password = input}  />
-                        </FormGroup>
-                        <FormGroup check>
-                            <Label check>
-                            <Input type="checkbox" name="remember" innerRef={(input) => this.remember = input}/>Remember me
-                            </Label>
-                        </FormGroup>
-                        <Button type="submit" value="submit" color="primary">Login</Button>
-                    </Form>
-                </ModalBody>
-            </Modal>
         </div>
         );
     }

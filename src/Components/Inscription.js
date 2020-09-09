@@ -10,7 +10,7 @@ const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 const validPassword = (val) => new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})").test(val);
 
-class Inscription extends Component {
+class Register extends Component {
 
     constructor(props) {
         super(props);
@@ -24,7 +24,7 @@ class Inscription extends Component {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Incsription réussite');
         axios.post(
-            `http://localhost:8080/users`,
+            `http://localhost:8080/api/auth/inscription`,
             values,
             {
               headers: {
@@ -41,12 +41,12 @@ class Inscription extends Component {
   
     render() {
         return (
-            <div classNmae="container">
+            <div className="container inscription">
                 <div className="row row-content">
-                    <div className="col-12 padd">
+                    <div className="col-12">
                         <h3>Remplir vos informations</h3>
                     </div>
-                        <div className="col-12 col-md-9 padd">
+                        <div className="col-12 col-md-9">
                             <LocalForm onSubmit={(values) => this.handleSubmit(values)}
                                 model="user"
                                 validators={{
@@ -70,8 +70,8 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    minLength: 'Doit contenir plus de 2 caractères',
-                                                    maxLength: 'Ne dépassez pas 20 caractères'
+                                                    minLength: <div className="alert alert-danger" role="alert">Doit contenir plus de 2 caractères</div>,
+                                                    maxLength: <div className="alert alert-danger" role="alert">Ne dépassez pas 20 caractères</div>
                                                 }}
                                             />
                                     </Col>
@@ -92,8 +92,8 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    minLength: 'Doit contenir plus de 4 caractères',
-                                                    maxLength: 'Ne dépassez pas 20 caractères'
+                                                    minLength: <div className="alert alert-danger" role="alert">Doit contenir plus de 4 caractères</div>,
+                                                    maxLength: <div className="alert alert-danger" role="alert">Ne dépassez pas 20 caractères</div>
                                                 }}
                                             />
                                     </Col>                        
@@ -115,7 +115,7 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    validEmail: 'Adresse e-mail invalide'
+                                                    validEmail: <div className="alert alert-danger" role="alert">Adresse e-mail invalide</div>
                                                 }}
                                             />
                                     </Col>
@@ -136,9 +136,9 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    minLength: "Doit contenir plus d'un numéro ",
-                                                    maxLength: 'Ne dépassez pas 13 numéros ',
-                                                    isNumber: 'Doit être un nombre'
+                                                    minLength: <div className="alert alert-danger" role="alert">Doit contenir plus d'un numéro</div>,
+                                                    maxLength: <div className="alert alert-danger" role="alert">Ne dépassez pas 13 numéros</div>,
+                                                    isNumber: <div className="alert alert-danger" role="alert">Doit être un nombre</div>
                                                 }}
                                             />
                                     </Col>
@@ -179,7 +179,7 @@ class Inscription extends Component {
                                                 show="touched"
                                                 messages={{
                                                     required: 'Obligatoire ',
-                                                    validPassword: 'Le mot de passe doit contenir au moins un caractère majuscule, minuscule, numéro et un caractère spécial au total 8 caractères ou plus'
+                                                    validPassword: <div className="alert alert-danger" role="alert">Le mot de passe doit contenir au moins un caractère majuscule, minuscule, numéro et un caractère spécial au total 8 caractères ou plus</div>
                                                 }}
                                             />
                                     </Col>
@@ -196,7 +196,7 @@ class Inscription extends Component {
                                                 model="user"
                                                 show="touched"
                                                 messages={{
-                                                    passwordsMatch: 'Les mots de passe ne correspondent pas'
+                                                    passwordsMatch: <div className="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>
                                                 }}
                                             />
                                     </Col>
@@ -216,4 +216,4 @@ class Inscription extends Component {
     }
   }
 
-  export default Inscription;
+  export default Register;
