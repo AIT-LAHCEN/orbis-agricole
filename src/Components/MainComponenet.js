@@ -77,32 +77,32 @@ class Main extends Component {
         <Navbar variant="dark" expand="lg" className="border-bottom border-light mynavbar1">
         <a href='/'><img className="titleImg" src='orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
           <div className="navbar-nav mr-auto">
-            <li className="nav-item">
+            <li className="nav-item marg">
               <Link to={"/home"} className="nav-link">
                 Home
               </Link>
             </li>
 
             {showModeratorBoard && (
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/mod"} className="nav-link">
-                  Moderator Board
+                  Espace Moderateur
                 </Link>
               </li>
             )}
 
             {showAdminBoard && (
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/admin"} className="nav-link">
-                  Admin Board
+                  Espace Admin
                 </Link>
               </li>
             )}
 
             {currentUser && (
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Espace Utilisateur
                 </Link>
               </li>
             )}

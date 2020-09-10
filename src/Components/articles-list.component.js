@@ -128,12 +128,12 @@ export default class articlesList extends Component {
               ))}
           </ul>
 
-          <button
+          {/* <button
             className="m-3 btn btn-sm btn-danger"
             onClick={this.removeAllarticles}
           >
             Supprimer 
-          </button>
+          </button> */}
         </div>
         <div className="col-md-6">
           {currentarticle ? (
