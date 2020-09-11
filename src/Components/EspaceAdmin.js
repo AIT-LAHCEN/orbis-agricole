@@ -4,8 +4,6 @@ import Addarticle from "./add-article.component";
 import article from "./article.component";
 import articlesList from "./articles-list.component";
 import addImage from './addImage';
-import { faTools } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class EspaceAdmin extends Component {
     render() {
@@ -13,9 +11,7 @@ class EspaceAdmin extends Component {
         <Router>
           <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-              <a href="/admin/articles" className="navbar-brand">
-              <FontAwesomeIcon icon={faTools} /> Espace Admin
-              </a>
+              <span className="fa fa-cogs fa-lg" style={{ color: "white" }}></span>
               <div className="navbar-nav mr-auto">
                 <li className="nav-item">
                   <Link to={"/admin/articles"} className="nav-link">
