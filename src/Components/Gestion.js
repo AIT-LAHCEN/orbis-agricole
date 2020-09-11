@@ -43,9 +43,9 @@ const Articles = () => {
                     <CardActionArea className="myCard">
                         {article.id ? <CardMedia className="image" component="img" height="140" image={`http://localhost:8080/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
                         <CardContent>
-                            <Typography gutterBottom className="card-title body" > {article.title} </Typography>
-                            <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
-                            <Typography variant="body1" color="textPrimary" component="p">
+                            <Typography gutterBottom className="card-title body" noWrap> {article.title} </Typography>
+                            <Typography variant="subtitle1" size="small" color="secondary" noWrap>{article.theme}</Typography>
+                            <Typography variant="body1" color="textPrimary" component="p" noWrap>
                                     {article.description}
                             </Typography>
                             <br></br>

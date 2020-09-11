@@ -13,6 +13,8 @@ import Loader from 'react-loader-spinner';
 
 const Articles = () => {
 
+  
+
   const [articles, setArticles ] = useState([]);
 
   const fetchArticles = () => {
@@ -39,9 +41,9 @@ const Articles = () => {
                   <CardActionArea className="myCard">
                       {article.id ? <CardMedia className="image" component="img" height="140" image={`http://localhost:8080/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
                       <CardContent>
-                          <Typography gutterBottom className="card-title body" > {article.title} </Typography>
-                          <Typography variant="subtitle1" size="small" color="secondary">{article.theme}</Typography>
-                          <Typography variant="body1" color="textPrimary" component="p">
+                          <Typography gutterBottom className="card-title body" noWrap> {article.title} </Typography>
+                          <Typography variant="subtitle1" size="small" color="secondary" noWrap>{article.theme}</Typography>
+                          <Typography variant="body1" color="textPrimary" component="p" noWrap>
                                   {article.description}
                           </Typography>
                           <br></br>
@@ -70,12 +72,12 @@ export default class News extends Component {
                 <Loader
                             type="TailSpin"
                             color="#00BFFF"
-                            height={180}
-                            width={180}
-                            timeout={3000} //3 secs
+                            height={50}
+                            width={50}
+                            timeout={1500} //3 secs
                     
                         />
-                <Articles/>
+                <Articles />
                 </div>
           </div>  
         );

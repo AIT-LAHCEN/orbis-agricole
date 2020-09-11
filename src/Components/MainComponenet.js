@@ -75,11 +75,11 @@ class Main extends Component {
     return(
       <div className="navigation">
         <Navbar variant="dark" expand="lg" className="border-bottom border-light mynavbar1">
-        <a href='/'><img className="titleImg" src='orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
+          <a href='/' className="thisA"><img className="titleImg" src='orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
-                Home
+                Accueil
               </Link>
             </li>
 
@@ -124,12 +124,12 @@ class Main extends Component {
                         </Form>
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
+                  Bienvenue, {currentUser.username}
                 </Link>
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
+                  Se déconnecter
                 </a>
               </li>
             </div>

@@ -12,9 +12,13 @@ li{
 }
 
 .titleImg{
-  width: 55%;
-  padding-left: 20%;
-  margin-left: 40%;
+  width: 40%;
+  margin-left: 30%;
+}
+
+.thisA{
+  margin-right: -5%;
+  margin-left: auto;
 }
 
 .title:hover {
@@ -32,7 +36,7 @@ li{
 
 .padd{
   padding-left: 15%;
-  padding-right: 15%;
+  padding-right: 5%;
 }
 
 .padd2{
@@ -379,4 +383,26 @@ label {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+
+
+.ImageDetailNews{
+  margin-bottom: 2em;
+  margin-left: 30%;
+  margin-right: 50%;
+}
+
+.MyMedia{
+  display: inline-block !important;
+}
+
+.Myparagraph{
+  font-size : 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Verdana;
+  color: #555555;
+  line-height: 1.7;
+  letter-spacing: .25px;
 }

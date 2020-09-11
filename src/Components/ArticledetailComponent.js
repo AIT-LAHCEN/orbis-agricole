@@ -58,9 +58,9 @@ export default class Articledetail extends Component {
             <Loader
                             type="TailSpin"
                             color="#00BFFF"
-                            height={180}
-                            width={180}
-                            timeout={3000} //3 secs
+                            height={100}
+                            width={100}
+                            timeout={1000} //3 secs
                     
                         />
             {currentarticle ? (
@@ -71,20 +71,22 @@ export default class Articledetail extends Component {
                     exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
                 <Media tag="li">
-                    <Media left middle>
-                        {currentarticle.id ? <Media object style={{width : '30em' }} src={`http://localhost:8080/api/v1/article/${currentarticle.id}/image/download`} alt={currentarticle.title}/> : null }
-                    </Media>
-                    <Media body className="ml-5">
-                    <Media heading>{currentarticle.description}</Media>
-                    <p>{currentarticle.contenu}</p>
-                    </Media>
+                    <div className="MyMedia">
+                      <Media left middle className="ImageDetailNews">
+                          {currentarticle.id ? <Media object style={{width : '30em' , height : '20em' }} src={`http://localhost:8080/api/v1/article/${currentarticle.id}/image/download`} alt={currentarticle.title}/> : null }
+                      </Media>
+                      <Media body className="ml-5">
+                        <Media heading style={{fontSize : '30px'}}>{currentarticle.description}</Media>
+                        <p className="Myparagraph">{currentarticle.contenu}</p>
+                      </Media>
+                    </div>
                 </Media>
             </FadeTransform>
         </div>            
             ) : (
             <div>
                 <br />
-                <p>S'il vous plaît, attendez...</p>
+                <p>Un problème est survenue, veuillez actualiser la page SVP</p>
             </div>
             )}
             </div>
