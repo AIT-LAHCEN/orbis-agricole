@@ -66,16 +66,17 @@ function Dropzone({ID_index}) {
         title: title2,
         headers: {
             "Content-Type": "application/json",
-        }
-    })
-    .then(response => {
+               }
+        })
+        .then(response => {
+          
         console.log(response);
-    })
-    .catch(err => {
-        console.log(err);
+        })
+        .catch(err => {
+        console.log(err.response.data);
     });
 
-  }, [ID_index]);
+    }, [ID_index]);
   
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 

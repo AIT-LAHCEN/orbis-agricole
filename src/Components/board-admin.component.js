@@ -3,7 +3,7 @@ import EspaceAdmin from './EspaceAdmin';
 
 import UserService from "../services/user.service";
 
-export default class BoardUser extends Component {
+export default class BoardAdmin extends Component {
   constructor(props) {
     super(props);
 

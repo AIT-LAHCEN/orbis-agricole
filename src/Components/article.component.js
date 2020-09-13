@@ -128,7 +128,7 @@ export default class article extends Component {
         });
       })
       .catch(e => {
-        console.log(e);
+        console.log(e.response);
       });
   }
 
