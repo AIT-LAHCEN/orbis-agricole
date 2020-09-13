@@ -3,6 +3,7 @@ import {Card, Form, Button, Col} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSave, faPlusSquare, faUndo, faList, faEdit} from '@fortawesome/free-solid-svg-icons';
 import MyToast from './MyToast';
+import authHeader from '../services/auth-header';
 import axios from 'axios';
 
 export default class User extends Component {
@@ -26,7 +27,10 @@ export default class User extends Component {
     }
 
     finduserById = (userId) => {
-        axios.get("http://localhost:8080/api/admin/Users/"+userId)
+        axios.get("http://localhost:8080/api/admin/Users/" + userId, {
+            headers: authHeader() 
+            }
+        )
             .then(response => {
                 if(response.data != null) {
                     this.setState({
@@ -87,9 +91,7 @@ export default class User extends Component {
         };
 
         axios.put(`http://localhost:8080/api/admin/Users/${this.state.id}`, user,{
-            headers : {
-                "Content-type": "application/json",
-            }
+            headers : authHeader()
         }).then(response => {
                 if(response.data != null) {
                     this.setState({"show":true, "method":"put"});
@@ -174,22 +176,22 @@ export default class User extends Component {
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridroles">
                                     <Form.Label>Roles</Form.Label>
-                                    <Form.Control required autoComplete="off"
+                                    {/* <Form.Control required autoComplete="off"
                                         type="test" name="roles"
                                         value={JSON.stringify(roles).slice(17, JSON.stringify(roles).length-3)}
                                         onChange={this.userChange}
                                         className={"bg-dark text-white"}
-                                        placeholder="Enter user roles" />
-                                        {/*<Form.Control as="select" required autoComplete="off"
+                                        placeholder="Enter user roles" /> */}
+                                        <Form.Control as="select" required autoComplete="off"
                                             className="bg-dark text-white"
                                             name="roles"
                                             // value={JSON.stringify(roles).slice(17, JSON.stringify(roles).length-3)}
-                                            value={roles}
+                                            /* value={roles} */
                                             onChange={this.userChange}>
                                                 <option value={JSON.parse('{"id":1,"name":"ROLE_USER"}')}>ROLES_USER</option>
                                                 <option value={JSON.parse('{"id":2,"name":"ROLE_MODERATOR"}')}>ROLES_MODERATOR</option>
                                                 <option value={JSON.parse('{"id":3,"name":"ROLE_ADMIN"}')}>ROLES_ADMIN</option>
-                                        </Form.Control>*/}
+                                        </Form.Control>
                                 </Form.Group>
                             </Form.Row>
                         </Card.Body>

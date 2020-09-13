@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-import MyToast from "./MyToast";
+import InscriptionToast from "./InscriptionToast";
 import axios from 'axios';
 
 // const required = (val) => val && val.length;
@@ -58,8 +58,8 @@ class Register extends Component {
             <div>
                 <div >
 
-                <div style={{"display":this.state.show ? "block" : "none"}}>
-                    <MyToast show = {this.state.show} message = {this.state.method === "put" ? "User Updated Successfully." : "User Saved Successfully."} type = {"success"}/>
+                <div>
+                    <InscriptionToast children={{ show: this.state.show, message: "User added successfully", errorFlag: this.state.errorFlag, errorMessage: this.state.errorMessage }} />
                 </div>
 
 

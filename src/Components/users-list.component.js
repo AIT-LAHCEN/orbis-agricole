@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MyToast from './MyToast';
+import authHeader from '../services/auth-header';
 import {Link} from 'react-router-dom';
 
 export default class usersList extends Component {
@@ -16,7 +17,9 @@ export default class usersList extends Component {
     }
 
     componentDidMount(){
-        axios.get("http://localhost:8080/api/admin/Users")
+        axios.get("http://localhost:8080/api/admin/Users",{
+            headers: authHeader()
+        })
         .then(response => response.data)
         .then((data) => {
             this.setState({users:data});
@@ -24,7 +27,9 @@ export default class usersList extends Component {
     }
 
     deleteUser = (userId) => {
-        axios.delete("http://localhost:8080/api/admin/Users/"+userId).then(response => {
+        axios.delete("http://localhost:8080/api/admin/Users/" + userId,{
+            headers: authHeader()
+        }).then(response => {
             if(response.data != null){
                 this.setState({"show":true});
                 setTimeout(() => this.setState({"show":false}), 3000);
