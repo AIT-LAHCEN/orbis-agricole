@@ -48,7 +48,7 @@ class Register extends Component {
               this.setState({ "errorFlag": true });
               this.setState({ "errorMessage": err.response.data.message })
               console.log(err.response.data.message);
-              setTimeout(() => this.setState({ "show": false }), 5000);
+              setTimeout(() => this.setState({ "errorFlag": false }), 5000);
           });
     }
   
