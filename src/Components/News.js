@@ -12,7 +12,6 @@ import { FadeTransform } from 'react-animation-components';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loader from 'react-loader-spinner';
-import { Grid } from 'react-grid-layout';
 
 const Articles = () => {
 
@@ -84,8 +83,8 @@ export default class News extends Component {
                 <Loader
                             type="TailSpin"
                             color="#00BFFF"
-                            height={100}
-                            width={100}
+                            height={180}
+                            width={180}
                             timeout={3000} //3 secs
                     
                         />
