@@ -4,10 +4,8 @@ import Addarticle from "./add-article.component";
 import article from "./article.component";
 import articlesList from "./articles-list.component";
 import addImage from './addImage';
-import usersList from './users-list.component';
-import User from './User';
 
-class EspaceAdmin extends Component {
+class EspaceModerator extends Component {
     render() {
       return (
         <Router>
@@ -25,21 +23,14 @@ class EspaceAdmin extends Component {
                     Ajouter un article
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to={"/admin/users"} className="nav-link">
-                    Liste des utilisateurs
-                  </Link>
-                </li>
               </div>
             </nav>
   
             <div className="container mt-3">
               <Switch>
-                <Route exact path="/admin/users" component={usersList} />
                 <Route exact path="/admin/articles" component={articlesList} />
                 <Route exact path="/admin/add" component={Addarticle} />
                 <Route exact path="/admin/addImage" component={addImage} />
-                <Route path="/admin/edit/:id" exact component={User}/>
                 <Route path="/admin/articles/:id" component={article} />
               </Switch>
             </div>
@@ -49,4 +40,4 @@ class EspaceAdmin extends Component {
     }
   }
   
-  export default EspaceAdmin;
+  export default EspaceModerator;

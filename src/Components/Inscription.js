@@ -58,9 +58,9 @@ class Register extends Component {
             <div>
                 <div >
 
-                    <div>
-                        <MyToast children={{ show: this.state.show, message: "User added successfully", errorFlag: this.state.errorFlag, errorMessage: this.state.errorMessage}}/>
-                    </div>
+                <div style={{"display":this.state.show ? "block" : "none"}}>
+                    <MyToast show = {this.state.show} message = {this.state.method === "put" ? "User Updated Successfully." : "User Saved Successfully."} type = {"success"}/>
+                </div>
 
 
                     <div className="container inscription">

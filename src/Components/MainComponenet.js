@@ -134,7 +134,7 @@ class Main extends Component {
               </li>
             </div>
           ) : (
-            <div className="navbar-nav ml-auto padd">
+            <div className="navbar-nav ml-auto padd3">
               <Form inline >
                             <InputGroup>
                                 <InputGroup.Prepend>

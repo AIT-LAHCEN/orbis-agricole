@@ -1,7 +1,3 @@
-Button{
-  width: 6em;
-}
-
 li{
   display: inline-block;
   margin-left: 1em;
@@ -407,11 +403,11 @@ label {
   letter-spacing: .25px;
 }
 .marg{
-  /* width: 100%; */
-  /* margin-left: 4%;
-  margin-right: 4%;
-  padding-left: 20%; */
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+}
+
+.padd3{
+  padding-right: 18%;
 }
