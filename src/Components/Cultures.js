@@ -84,10 +84,10 @@ class Cultures extends Component{
                 <div className="padd">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Gestion et Droit</BreadcrumbItem>
+                        <BreadcrumbItem active>Cultures</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3><FontAwesomeIcon icon={faSeedling} /> Actualités gestion et droit</h3>
+                        <h3><FontAwesomeIcon icon={faSeedling} /> Actualités cultures</h3>
                         <hr/>
                     </div>
                 </div>

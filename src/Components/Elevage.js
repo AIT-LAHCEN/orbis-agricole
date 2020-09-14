@@ -84,10 +84,10 @@ class Elevage extends Component{
                 <div className="padd">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Gestion et Droit</BreadcrumbItem>
+                        <BreadcrumbItem active>Elevage</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3><FontAwesomeIcon icon={faPaw} /> Actualités gestion et droit</h3>
+                        <h3><FontAwesomeIcon icon={faPaw} /> Actualités élevage</h3>
                         <hr/>
                     </div>
                 </div>

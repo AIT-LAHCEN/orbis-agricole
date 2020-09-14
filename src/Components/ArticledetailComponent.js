@@ -4,6 +4,7 @@ import { Media, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { FadeTransform } from 'react-animation-components';
 import Loader from 'react-loader-spinner';
+import AuthService from "../services/auth.service";
 
 export default class Articledetail extends Component {
   constructor(props) {
@@ -18,12 +19,19 @@ export default class Articledetail extends Component {
         contenu: "",
         published: false
       },
-      message: ""
+      currentUser: undefined,
     };
   }
 
   componentDidMount() {
     this.getarticle(this.props.match.params.id);
+    const user = AuthService.getCurrentUser();
+
+    if (user) {
+      this.setState({
+        currentUser: user,
+      });
+    }
   }
 
   getarticle(id) {
@@ -40,9 +48,11 @@ export default class Articledetail extends Component {
   }
 
   render() {
-    const { currentarticle } = this.state;
+    const { currentarticle, currentUser } = this.state;
 
     return (
+      <React.Fragment>
+      {currentUser ? (
         <div className="container">
             <div className="row">
                 <Breadcrumb>
@@ -89,8 +99,15 @@ export default class Articledetail extends Component {
                 <p>Un problème est survenue, veuillez actualiser la page SVP</p>
             </div>
             )}
-            </div>
+            </div> 
+      </div> ) : ( 
+      <div className="container">
+        <header className="jumbotron">
+          <h3>Tconnecta be3da</h3>
+        </header>
       </div>
+      )}
+      </React.Fragment>
     );
   }
 }

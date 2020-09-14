@@ -84,10 +84,10 @@ class Materiels extends Component{
                 <div className="padd">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/home'>Accueil</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Gestion et Droit</BreadcrumbItem>
+                        <BreadcrumbItem active>Matériels</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3><FontAwesomeIcon icon={faTractor} /> Actualités gestion et droit</h3>
+                        <h3><FontAwesomeIcon icon={faTractor} /> Actualités matériels</h3>
                         <hr/>
                     </div>
                 </div>
