@@ -199,14 +199,14 @@ export default class User extends Component {
                                             onChange={this.onChangeRole}>
                                                 {roles.map((r , i) =>
                                                     <option
-                                                    key={i}
-                                                    value={r.id}>
+                                                    
+                                                    value={r.name}>
                                                     {r.name}
                                                     </option>
                                                 )}   
-                                                {/* <option value="ROLES_USER">ROLES_USER</option>
-                                                <option value="ROLES_MODERATOR">ROLES_MODERATOR</option>   
-                                                <option value="ROLES_ADMIN">ROLES_ADMIN</option> */}
+                                                <option value="ROLE_USER">ROLE_USER</option>
+                                                <option value="ROLE_MODERATOR">ROLE_MODERATOR</option>   
+                                                <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                                         </Form.Control>
                                 </Form.Group>
                             </Form.Row>
