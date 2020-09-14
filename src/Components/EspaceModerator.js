@@ -14,12 +14,12 @@ class EspaceModerator extends Component {
               <span className="fa fa-cogs fa-lg" style={{ color: "white" }}></span>
               <div className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link to={"/admin/articles"} className="nav-link">
+                  <Link to={"/mod/articles"} className="nav-link">
                     Liste des articles
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/admin/add"} className="nav-link">
+                  <Link to={"/mod/add"} className="nav-link">
                     Ajouter un article
                   </Link>
                 </li>
@@ -28,10 +28,10 @@ class EspaceModerator extends Component {
   
             <div className="container mt-3">
               <Switch>
-                <Route exact path="/admin/articles" component={articlesList} />
-                <Route exact path="/admin/add" component={Addarticle} />
-                <Route exact path="/admin/addImage" component={addImage} />
-                <Route path="/admin/articles/:id" component={article} />
+                <Route exact path="/mod/articles" component={articlesList} />
+                <Route exact path="/mod/add" component={Addarticle} />
+                <Route exact path="/mod/addImage" component={addImage} />
+                <Route path="/mod/articles/:id" component={article} />
               </Switch>
             </div>
           </div>

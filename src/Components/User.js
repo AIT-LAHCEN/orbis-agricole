@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Card, Form, Button, Col} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSave, faPlusSquare, faUndo, faList, faEdit} from '@fortawesome/free-solid-svg-icons';
+import {faSave, faPlusSquare, faList, faEdit} from '@fortawesome/free-solid-svg-icons';
 import MyToast from './MyToast';
 import authHeader from '../services/auth-header';
 import axios from 'axios';
@@ -14,9 +14,10 @@ export default class User extends Component {
         this.state.show = false;
         this.userChange = this.userChange.bind(this);
         this.submituser = this.submituser.bind(this);
+        this.onChangeRole = this.onChangeRole.bind(this);
     }
     initialState = {
-        id:'', username:'', fullname:'', email:'', telephone:'', password:'', roles:''
+        id:'', username:'', fullname:'', email:'', telephone:'', password:'', roles:[]
     };
 
     componentDidMount() {
@@ -111,6 +112,15 @@ export default class User extends Component {
         });
     };
 
+    onChangeRole(e) {
+            const role= e.target.value;
+            let updatedObj = Object.assign({}, this.state.roles[0],{name: role});
+                
+        this.setState(prevState => ({
+            roles: [...prevState.roles, updatedObj]
+        }))
+                  
+    }
     userList = () => {
         return this.props.history.push("/admin/users");
     };
@@ -154,7 +164,7 @@ export default class User extends Component {
                                         type="test" name="email"
                                         value={email} onChange={this.userChange}
                                         className={"bg-dark text-white"}
-                                        placeholder="Enter user Cover Photo URL" />
+                                        placeholder="Enter user email" />
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridtelephone">
                                     <Form.Label>Téléphone</Form.Label>
@@ -162,7 +172,7 @@ export default class User extends Component {
                                         type="test" name="telephone"
                                         value={telephone} onChange={this.userChange}
                                         className={"bg-dark text-white"}
-                                        placeholder="Enter user ISBN Number" />
+                                        placeholder="Enter user phone number" />
                                 </Form.Group>
                             </Form.Row>
                             <Form.Row>
@@ -178,19 +188,25 @@ export default class User extends Component {
                                     <Form.Label>Roles</Form.Label>
                                     {/* <Form.Control required autoComplete="off"
                                         type="test" name="roles"
-                                        value={JSON.stringify(roles).slice(17, JSON.stringify(roles).length-3)}
-                                        onChange={this.userChange}
+                                        onChange={this.onChangeRole}
                                         className={"bg-dark text-white"}
                                         placeholder="Enter user roles" /> */}
                                         <Form.Control as="select" required autoComplete="off"
                                             className="bg-dark text-white"
                                             name="roles"
                                             // value={JSON.stringify(roles).slice(17, JSON.stringify(roles).length-3)}
-                                            /* value={roles} */
-                                            onChange={this.userChange}>
-                                                <option value={JSON.parse('{"id":1,"name":"ROLE_USER"}')}>ROLES_USER</option>
-                                                <option value={JSON.parse('{"id":2,"name":"ROLE_MODERATOR"}')}>ROLES_MODERATOR</option>
-                                                <option value={JSON.parse('{"id":3,"name":"ROLE_ADMIN"}')}>ROLES_ADMIN</option>
+                                            // value={roles && roles.map((role, index) => <li key={index}>{role}</li>)}
+                                            onChange={this.onChangeRole}>
+                                                {roles.map((r , i) =>
+                                                    <option
+                                                    key={i}
+                                                    value={r.id}>
+                                                    {r.name}
+                                                    </option>
+                                                )}   
+                                                {/* <option value="ROLES_USER">ROLES_USER</option>
+                                                <option value="ROLES_MODERATOR">ROLES_MODERATOR</option>   
+                                                <option value="ROLES_ADMIN">ROLES_ADMIN</option> */}
                                         </Form.Control>
                                 </Form.Group>
                             </Form.Row>
@@ -199,9 +215,9 @@ export default class User extends Component {
                             <Button size="sm" variant="success" type="submit">
                             <FontAwesomeIcon icon={faSave} /> {this.state.id ? "Update" : "Save"}
                             </Button>{' '}
-                            <Button size="sm" variant="info" type="reset">
+                            {/* <Button size="sm" variant="info" type="reset">
                                 <FontAwesomeIcon icon={faUndo} /> Reset
-                            </Button>{' '}
+                            </Button>{' '} */}
                             <Button size="sm" variant="info" type="button" onClick={this.userList.bind()}>
                                 <FontAwesomeIcon icon={faList} /> user List
                             </Button>
