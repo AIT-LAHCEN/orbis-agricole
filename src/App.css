@@ -287,10 +287,9 @@ html {
 }
 
 
-/* .chart{
-  margin-left: 20%;
-  margin-right: 20%;
-}  */
+.chart{
+  margin-top: 100px;
+} 
 
 .content-stat{
   margin:5%;
@@ -330,6 +329,7 @@ html {
   text-align: center;
   font-size: x-large;
   font-weight: bold;
+  color: #555555;
 }
 
 .list {
@@ -410,4 +410,35 @@ label {
 
 .padd3{
   padding-right: 18%;
+}
+
+.HeaderClassText{
+  pointer-events: none;
+}
+
+.HcpParagraph{
+  font-size : 20px;
+  padding-top: 35px;
+  font-family: Verdana;
+  color: #555555;
+  line-height: 1.7;
+  letter-spacing: .25px;
+  text-align: center;
+}
+
+.ChartImage{
+  margin-left: 30px;
+  width: 20%;
+}
+
+.header-div-elvages{
+  background-color: #f79e9e9c;
+}
+
+.header-div-prod-agri{
+  background-color: #f9cc79;
+}
+
+.header-div-superf-cultiv{
+  background-color: #b9f6ca;
 }
