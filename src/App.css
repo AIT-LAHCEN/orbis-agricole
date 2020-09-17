@@ -50,7 +50,7 @@ li{
     background-size: cover;
     margin-left: 15%;
     margin-right: 15%;
-    height: 66em;
+    height: 35em;
     color: aliceblue;
 }
 
@@ -441,4 +441,9 @@ label {
 
 .header-div-superf-cultiv{
   background-color: #b9f6ca;
+}
+
+.paddB{
+  padding-bottom: 5%;
+  padding-top: 5%;
 }

@@ -104,7 +104,7 @@ export default class addImage extends Component {
                   <h3>Ajouter un article (Etape 2/2...)</h3>
                 </div>
                 <Dropzone/>
-                <FormGroup row>
+                <FormGroup row className="paddB">
                     <Col md={{size: 5, offset: 5}}>
                     <NavLink to="/admin/add">
                         <Button type="submit" className="btn btn-success">

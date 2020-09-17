@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
-import Videos from './Videos';
-import Exploitation from './Exploitation';
+import HomeMeteo from './HomeMeteo';
 import News from "./HomeNews";
+import Videos from './Videos';
 
 import { ARTICLES } from '../Shared/articles';
 
@@ -22,8 +22,8 @@ class Accueil extends Component{
             <div className="App">
                 
                 <News/>
-                <Exploitation/>
-                <Videos/> 
+                <HomeMeteo/>
+                <Videos/>
             </div>
         );
     

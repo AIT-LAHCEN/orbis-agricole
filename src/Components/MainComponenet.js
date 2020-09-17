@@ -149,13 +149,13 @@ class Main extends Component {
                         </Form>
               <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
-                  Login
+                  Se connecter
                 </Link>
               </li>
 
               <li className="nav-item">
                 <Link to={"/signup"} className="nav-link">
-                  Sign Up
+                  S'inscrire
                 </Link>
               </li>
             </div>
