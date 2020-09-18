@@ -68,14 +68,14 @@ html {
 }
 
 .footer {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   color: aliceblue;
   font-size: 14px;
   text-align: center;
-  position: relative;
+  position: absolute; 
   background-color: #161415;
-  margin-top: 255px;
+  margin-top: 600px;
 }
 
 .footer a, .footer a:visited { color: #525252; }

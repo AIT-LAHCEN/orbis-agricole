@@ -15,17 +15,17 @@ class Videos extends Component{
                         <br/>
                         
                 </div>
-                <img className="col-2 float-left" src="orbis-agricole/images/orb1.jpg" alt="orbis agro industry animal"/>
-                <img className="col-2 float-right" src="orbis-agricole/images/orb2.jpg" alt="orbis agro industry vigital"/>
+                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-animal/' className="thisA"><img className="col-2 float-left" src="orbis-agricole/images/orb1.jpg" alt="orbis agro industry animal"/></a>
+                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-vegetal/' className="thisA"><img className="col-2 float-right" src="orbis-agricole/images/orb2.jpg" alt="orbis agro industry vigital"/></a>
                 <video autoPlay loop muted
                 style={{
                     position: "relative",
                     width: "100%",
                     left: "50%",
                     top: "100%",
-                    height: "85%",
+                    height: "90%",
                     objectFit: "cover",
-                    transform: "translate(-50%, -82%)",
+                    transform: "translate(-50%, -80%)",
                     zIndex: "-1"
                 }}>
                     <source src={backvid} type="video/mp4"/>
