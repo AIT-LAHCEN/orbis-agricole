@@ -72,9 +72,9 @@ export default class News extends Component {
                 <Loader
                             type="TailSpin"
                             color="#00BFFF"
-                            height={50}
-                            width={50}
-                            timeout={1500} //3 secs
+                            height={100}
+                            width={100}
+                            timeout={1500}
                     
                         />
                 <Articles />

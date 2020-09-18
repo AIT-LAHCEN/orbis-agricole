@@ -96,9 +96,9 @@ class Cultures extends Component{
                     <Loader
                             type="TailSpin"
                             color="#00BFFF"
-                            height={180}
-                            width={180}
-                            timeout={3000} //3 secs
+                            height={100}
+                            width={100}
+                            timeout={1500}
                     
                         />
                         <Articles/>
