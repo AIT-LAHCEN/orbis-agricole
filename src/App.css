@@ -46,12 +46,8 @@ li{
 }
 
 .videos{
-    background: #161415;
     background-size: cover;
-    margin-left: 15%;
-    margin-right: 15%;
     height: 35em;
-    color: aliceblue;
 }
 
 .navigation{
@@ -79,6 +75,7 @@ html {
   text-align: center;
   position: relative;
   background-color: #161415;
+  margin-top: 255px;
 }
 
 .footer a, .footer a:visited { color: #525252; }
@@ -99,6 +96,17 @@ html {
     list-style: none;
     padding-left: 1.5em;
 }
+
+.video-title {  
+  color: #036d1a; 
+  font-family: "Great Vibes", cursive; 
+  font-size: 2em; 
+  font-weight: normal; 
+  text-align: center;
+  list-style: none;
+  padding-left: 1.5em;
+}
+
 
 .ul-footer {
   text-align: center;
