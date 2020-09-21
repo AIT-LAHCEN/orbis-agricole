@@ -18,7 +18,7 @@ const Articles = () => {
   const [articles, setArticles ] = useState([]);
 
   const fetchArticles = () => {
-    axios.get("/api/v1/article").then(res => {
+    axios.get("http://newsorbisagro-env.eba-pnjc2jvm.eu-west-3.elasticbeanstalk.com/api/v1/article").then(res => {
       // console.log(Object.values(res.data));
       setArticles(res.data.filter((article) => article.published));
     });
