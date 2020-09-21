@@ -17,8 +17,10 @@ const Articles = () => {
 
   const [articles, setArticles ] = useState([]);
 
+  delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+
   const fetchArticles = () => {
-    axios.get("/domaine/api/v1/article",
+    axios.get("http://newsorbisagro-env.eba-pnjc2jvm.eu-west-3.elasticbeanstalk.com/api/v1/article",
     {
       headers:{
         'Content-Type': null
