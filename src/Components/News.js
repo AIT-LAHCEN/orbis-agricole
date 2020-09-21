@@ -19,7 +19,7 @@ const Articles = () => {
   const [articles, setArticles ] = useState([]);
 
   const fetchArticles = () => {
-    axios.get("/domaine/api/v1/article",
+    axios.get("/api/v1/article",
     {
       headers:{
         'Content-Type': null

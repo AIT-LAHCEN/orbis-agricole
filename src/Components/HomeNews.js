@@ -20,7 +20,7 @@ const Articles = () => {
   delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
 
   const fetchArticles = () => {
-    axios.get("http://newsorbisagro-env.eba-pnjc2jvm.eu-west-3.elasticbeanstalk.com/api/v1/article",
+    axios.get("https://orbisagroindustry.live/api/v1/article",
     {
       headers:{
         'Content-Type': null
@@ -46,7 +46,7 @@ const Articles = () => {
           <Card>
               <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
                   <CardActionArea className="myCard">
-                      {article.id ? <CardMedia className="image" component="img" height="140" image={`/domaine/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
+                      {article.id ? <CardMedia className="image" component="img" height="140" image={`https://orbisagroindustry.live/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
                       <CardContent>
                           <Typography gutterBottom className="card-title body" noWrap> {article.title} </Typography>
                           <Typography variant="subtitle1" size="small" color="secondary" noWrap>{article.theme}</Typography>
