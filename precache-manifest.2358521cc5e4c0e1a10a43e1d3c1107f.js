@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c048bca3543910b529b7048b9cfc0c9b",
+    "revision": "1e5955c9f78d2fc049c52fe3b984e648",
     "url": "/orbis-agricole/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orbis-agricole/static/css/2.a05c3bb6.chunk.css"
   },
   {
-    "revision": "3be2c5e8dbe9c9f56f32",
+    "revision": "bd91a4e5432b8bce715e",
     "url": "/orbis-agricole/static/css/main.8b808a21.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orbis-agricole/static/js/2.0baa1503.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3be2c5e8dbe9c9f56f32",
-    "url": "/orbis-agricole/static/js/main.35d1b7c8.chunk.js"
+    "revision": "bd91a4e5432b8bce715e",
+    "url": "/orbis-agricole/static/js/main.b4d38ff5.chunk.js"
   },
   {
     "revision": "0e32f684c4d4ea7083e2",
