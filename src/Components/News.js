@@ -19,7 +19,12 @@ const Articles = () => {
   const [articles, setArticles ] = useState([]);
 
   const fetchArticles = () => {
-    axios.get("/domaine/api/v1/article").then(res => {
+    axios.get("/domaine/api/v1/article",
+    {
+      headers:{
+        'Content-Type': null
+      }
+    }).then(res => {
       // console.log(Object.values(res.data));
       setArticles(res.data.filter((article) => article.published));
     });
