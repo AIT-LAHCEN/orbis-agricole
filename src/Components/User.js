@@ -28,7 +28,7 @@ export default class User extends Component {
     }
 
     finduserById = (userId) => {
-        axios.get("http://localhost:8080/api/admin/Users/" + userId, {
+        axios.get("/api/admin/Users/" + userId, {
             headers: authHeader() 
             }
         )
@@ -65,7 +65,7 @@ export default class User extends Component {
             roles: this.state.roles
         };
 
-        axios.post("http://localhost:8080/api/admin/Users", user)
+        axios.post("/api/admin/Users", user)
             .then(response => {
                 if(response.data != null) {
                     this.setState({"show":true, "method":"post"});
@@ -91,7 +91,7 @@ export default class User extends Component {
             roles: this.state.roles
         };
 
-        axios.put(`http://localhost:8080/api/admin/Users/${this.state.id}`, user,{
+        axios.put(`/api/admin/Users/${this.state.id}`, user,{
             headers : authHeader()
         }).then(response => {
                 if(response.data != null) {

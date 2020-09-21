@@ -32,7 +32,7 @@ class Register extends Component {
 
         console.log('Current State is: ' + JSON.stringify(values));
         axios.post(
-            `http://localhost:8080/api/auth/inscription`,
+            `/api/auth/inscription`,
             values,
             {
               headers: {

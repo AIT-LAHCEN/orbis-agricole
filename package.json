@@ -1,6 +1,7 @@
 {
   "name": "orbis-agricole",
   "version": "0.1.0",
+  "proxy": "http://newsorbisagro-env.eba-pnjc2jvm.eu-west-3.elasticbeanstalk.com/",
   "private": true,
   "homepage": "https://ait-lahcen.github.io/orbis-agricole/",
   "dependencies": {

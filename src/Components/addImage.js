@@ -16,7 +16,7 @@ function Dropzone({ID_index}) {
     
     const fetchArticles = async () => {
       await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-      await axios.get("http://localhost:8080/api/Articles").then(res => {
+      await axios.get("/api/Articles").then(res => {
             console.log(res.data[res.data.length-1]);
           console.log(res.data[res.data.length-1].id);
           ID_index = res.data[res.data.length-1].id;
@@ -42,7 +42,7 @@ function Dropzone({ID_index}) {
     formData.append("file",file);
 
     axios.post(
-      `http://localhost:8080/api/v1/article/${ID_index}/image/upload`,
+      `/api/v1/article/${ID_index}/image/upload`,
       formData,
       {
         headers: {
@@ -56,7 +56,7 @@ function Dropzone({ID_index}) {
       console.log(err);
     });
 
-    axios.put(`http://localhost:8080/api/Articles/${ID_index}`, {
+    axios.put(`/api/Articles/${ID_index}`, {
         articleImageLink: imageLink,
         contenu: contenu2,
         date: date2,

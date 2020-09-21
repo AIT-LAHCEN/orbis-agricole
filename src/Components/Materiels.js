@@ -20,7 +20,7 @@ const Articles = () => {
     const [articles, setArticles ] = useState([]);
   
     const fetchArticles = () => {
-      axios.get("http://localhost:8080/api/v1/article").then(res => {
+      axios.get("/api/v1/article").then(res => {
         // console.log(Object.values(res.data));
         setArticles(res.data.filter((article) => article.theme === 'matériels' && article.published));
       });
@@ -41,7 +41,7 @@ const Articles = () => {
             <Card>
                 <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
                     <CardActionArea className="myCard">
-                        {article.id ? <CardMedia className="image" component="img" height="140" image={`http://localhost:8080/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
+                        {article.id ? <CardMedia className="image" component="img" height="140" image={`/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
                         <CardContent>
                             <Typography gutterBottom className="card-title body" noWrap> {article.title} </Typography>
                             <Typography variant="subtitle1" size="small" color="secondary" noWrap>{article.theme}</Typography>

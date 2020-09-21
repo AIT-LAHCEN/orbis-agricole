@@ -17,7 +17,7 @@ export default class usersList extends Component {
     }
 
     componentDidMount(){
-        axios.get("http://localhost:8080/api/admin/Users",{
+        axios.get("/api/admin/Users",{
             headers: authHeader()
         })
         .then(response => response.data)
@@ -27,7 +27,7 @@ export default class usersList extends Component {
     }
 
     deleteUser = (userId) => {
-        axios.delete("http://localhost:8080/api/admin/Users/" + userId,{
+        axios.delete("/api/admin/Users/" + userId,{
             headers: authHeader()
         }).then(response => {
             if(response.data != null){
