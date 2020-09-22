@@ -60,6 +60,7 @@ class Main extends Component {
 
   logOut() {
     AuthService.logout();
+    setTimeout("location.reload(true);", 500);
   }
 
   render() {
@@ -122,7 +123,7 @@ class Main extends Component {
               </li>
               <li className="nav-item marg">
                 <a href="/orbis-agricole/#/login" className="nav-link" onClick={this.logOut}>
-                  Se déconnecter
+                  Se Déconnecter
                 </a>
               </li>
             </div>
