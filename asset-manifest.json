@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/orbis-agricole/static/css/main.8b808a21.chunk.css",
-    "main.js": "/orbis-agricole/static/js/main.37aec9cd.chunk.js",
-    "main.js.map": "/orbis-agricole/static/js/main.37aec9cd.chunk.js.map",
+    "main.css": "/orbis-agricole/static/css/main.ac042fc1.chunk.css",
+    "main.js": "/orbis-agricole/static/js/main.ab809a66.chunk.js",
+    "main.js.map": "/orbis-agricole/static/js/main.ab809a66.chunk.js.map",
     "runtime-main.js": "/orbis-agricole/static/js/runtime-main.778363fd.js",
     "runtime-main.js.map": "/orbis-agricole/static/js/runtime-main.778363fd.js.map",
     "static/css/2.f26dcaeb.chunk.css": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css",
     "static/js/2.c45b21d6.chunk.js": "/orbis-agricole/static/js/2.c45b21d6.chunk.js",
     "static/js/2.c45b21d6.chunk.js.map": "/orbis-agricole/static/js/2.c45b21d6.chunk.js.map",
     "index.html": "/orbis-agricole/index.html",
-    "precache-manifest.5a5364aeed82e4deb59d682eb30e325e.js": "/orbis-agricole/precache-manifest.5a5364aeed82e4deb59d682eb30e325e.js",
+    "precache-manifest.5090774071ef7b41b829d66f7b33457c.js": "/orbis-agricole/precache-manifest.5090774071ef7b41b829d66f7b33457c.js",
     "service-worker.js": "/orbis-agricole/service-worker.js",
     "static/css/2.f26dcaeb.chunk.css.map": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css.map",
-    "static/css/main.8b808a21.chunk.css.map": "/orbis-agricole/static/css/main.8b808a21.chunk.css.map",
+    "static/css/main.ac042fc1.chunk.css.map": "/orbis-agricole/static/css/main.ac042fc1.chunk.css.map",
     "static/js/2.c45b21d6.chunk.js.LICENSE.txt": "/orbis-agricole/static/js/2.c45b21d6.chunk.js.LICENSE.txt",
     "static/media/App.css": "/orbis-agricole/static/media/check-solid.e597acab.svg",
     "static/media/font-awesome.css": "/orbis-agricole/static/media/fontawesome-webfont.fee66e71.woff",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.778363fd.js",
     "static/css/2.f26dcaeb.chunk.css",
     "static/js/2.c45b21d6.chunk.js",
-    "static/css/main.8b808a21.chunk.css",
-    "static/js/main.37aec9cd.chunk.js"
+    "static/css/main.ac042fc1.chunk.css",
+    "static/js/main.ab809a66.chunk.js"
   ]
 }
