@@ -15,8 +15,8 @@ class Videos extends Component{
                         <br/>
                         
                 </div>
-                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-animal/' className="thisA"><img className="col-2 float-left" src="orbis-agricole/images/orb1.jpg" alt="orbis agro industry animal"/></a>
-                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-vegetal/' className="thisA"><img className="col-2 float-right" src="orbis-agricole/images/orb2.jpg" alt="orbis agro industry vigital"/></a>
+                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-animal/' className="thisA"><img className="col-2 float-left" src="/orbis-agricole/images/orb1.jpg" alt="orbis agro industry animal"/></a>
+                <a href='http://www.orbisholding.ma/metiers/orbis-agro-industry-vegetal/' className="thisA"><img className="col-2 float-right" src="/orbis-agricole/images/orb2.jpg" alt="orbis agro industry vigital"/></a>
                 <video autoPlay loop muted
                 style={{
                     position: "relative",

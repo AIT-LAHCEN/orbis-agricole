@@ -33,7 +33,7 @@ export default class Marche_Stats extends Component{
                             Voici un aperçu des différentes <b>statistiques</b> en ce qui concerne le monde agricole Marocain 
                             tiré du site du <b>Haut-Commissariat au plan (HCP)</b> qui est chargé de la production, de l'analyse 
                             et de la publication des statistiques officielles au Maroc.</p>
-                        <img src='orbis-agricole/images/hcp.jpg' className="ChartImage" alt="Snow"/>
+                        <img src='/orbis-agricole/images/hcp.jpg' className="ChartImage" alt="Snow"/>
                     </div>
 
                     
