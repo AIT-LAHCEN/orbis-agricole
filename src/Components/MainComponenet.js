@@ -122,7 +122,7 @@ class Main extends Component {
               </li>
               <li className="nav-item marg">
                 <Link to={"/login"} className="nav-link" onClick={this.logOut}>
-                  Se déconnecter
+                  Se_déconnecter
                 </Link>
               </li>
               {/* <li className="nav-item marg">
