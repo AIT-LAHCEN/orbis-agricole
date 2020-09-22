@@ -75,7 +75,7 @@ class Main extends Component {
     return(
       <div className="navigation">
         <Navbar variant="dark" expand="lg" className="border-bottom border-light mynavbar1">
-          <a href='/' className="thisA"><img className="titleImg" src='/orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
+          <Link to ={'/'} className="thisA"><img className="titleImg" src='/orbis-agricole/images/orbislogo.jpg' alt="Logo"/></Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item marg">
               <Link to={"/home"} className="nav-link">
