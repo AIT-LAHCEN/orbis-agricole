@@ -99,17 +99,10 @@ class Main extends Component {
               </li>
             )}
 
-            {currentUser && (
-              <li className="nav-item marg">
-                <Link to={"/user"} className="nav-link">
-                  Espace Utilisateur
-                </Link>
-              </li>
-            )}
           </div>
 
           {currentUser ? (
-            <div className="navbar-nav ml-auto padd">
+            <div className="navbar-nav ml-auto padd2">
               <Form inline >
                             <InputGroup>
                                 <InputGroup.Prepend>
@@ -122,19 +115,19 @@ class Main extends Component {
                                 <FormControl type="text" placeholder="Search" className="mr-sm-1" />
                             </InputGroup>
                         </Form>
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/profile"} className="nav-link">
                   Bienvenue, {currentUser.username}
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link" onClick={this.logOut}>
+              <li className="nav-item marg">
+                <a href="https://ait-lahcen.github.io/orbis-agricole/#/login" className="nav-link" onClick={this.logOut}>
                   Se déconnecter
-                </Link>
+                </a>
               </li>
             </div>
           ) : (
-            <div className="navbar-nav ml-auto padd3">
+            <div className="navbar-nav ml-auto padd2">
               <Form inline >
                             <InputGroup>
                                 <InputGroup.Prepend>
@@ -147,13 +140,13 @@ class Main extends Component {
                                 <FormControl type="text" placeholder="Search" className="mr-sm-1" />
                             </InputGroup>
                         </Form>
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/login"} className="nav-link">
                   Se Connecter
                 </Link>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item marg">
                 <Link to={"/signup"} className="nav-link">
                   S'inscrire
                 </Link>

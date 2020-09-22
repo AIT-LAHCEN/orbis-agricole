@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
+import {Link} from 'react-router-dom';
 import AuthService from "../services/auth.service";
+
 
 const required = value => {
   if (!value) {
@@ -144,6 +145,7 @@ export default class Login extends Component {
                 this.checkBtn = c;
               }}
             />
+            <p>Créez votre compte on cliquant <Link to="/signup">ici</Link></p>
           </Form>
         </div>
       </div>

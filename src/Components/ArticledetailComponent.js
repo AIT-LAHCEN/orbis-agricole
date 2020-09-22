@@ -103,7 +103,7 @@ export default class Articledetail extends Component {
       </div> ) : ( 
       <div className="container">
         <header className="jumbotron">
-          <h3>Tconnecta be3da</h3>
+          <h3>Si vous êtes abonné, cliquez <Link to="/login">ici</Link> pour vous connecter et poursuivre la lecture</h3>
         </header>
       </div>
       )}
