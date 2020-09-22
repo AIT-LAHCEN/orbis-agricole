@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/orbis-agricole/static/css/main.8b808a21.chunk.css",
-    "main.js": "/orbis-agricole/static/js/main.19b2b08d.chunk.js",
-    "main.js.map": "/orbis-agricole/static/js/main.19b2b08d.chunk.js.map",
+    "main.js": "/orbis-agricole/static/js/main.c387855e.chunk.js",
+    "main.js.map": "/orbis-agricole/static/js/main.c387855e.chunk.js.map",
     "runtime-main.js": "/orbis-agricole/static/js/runtime-main.778363fd.js",
     "runtime-main.js.map": "/orbis-agricole/static/js/runtime-main.778363fd.js.map",
     "static/css/2.f26dcaeb.chunk.css": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css",
     "static/js/2.2ba96a80.chunk.js": "/orbis-agricole/static/js/2.2ba96a80.chunk.js",
     "static/js/2.2ba96a80.chunk.js.map": "/orbis-agricole/static/js/2.2ba96a80.chunk.js.map",
     "index.html": "/orbis-agricole/index.html",
-    "precache-manifest.d0dae77af574dfc592620a38f6e5a39b.js": "/orbis-agricole/precache-manifest.d0dae77af574dfc592620a38f6e5a39b.js",
+    "precache-manifest.33707b981d7ec402e647e5c407241112.js": "/orbis-agricole/precache-manifest.33707b981d7ec402e647e5c407241112.js",
     "service-worker.js": "/orbis-agricole/service-worker.js",
     "static/css/2.f26dcaeb.chunk.css.map": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css.map",
     "static/css/main.8b808a21.chunk.css.map": "/orbis-agricole/static/css/main.8b808a21.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.f26dcaeb.chunk.css",
     "static/js/2.2ba96a80.chunk.js",
     "static/css/main.8b808a21.chunk.css",
-    "static/js/main.19b2b08d.chunk.js"
+    "static/js/main.c387855e.chunk.js"
   ]
 }
