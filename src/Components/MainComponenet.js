@@ -60,7 +60,7 @@ class Main extends Component {
 
   logOut() {
     AuthService.logout();
-    setTimeout("location.reload(true);", 500);
+    setTimeout("location.reload(true);", 100);
   }
 
   render() {
@@ -123,7 +123,7 @@ class Main extends Component {
               </li>
               <li className="nav-item marg">
                 <Link to={"/login"} className="nav-link" onClick={this.logOut}>
-                  Se_déconnecter
+                  Se Déconnecter
                 </Link>
               </li>
               {/* <li className="nav-item marg">
