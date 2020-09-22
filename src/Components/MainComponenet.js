@@ -75,7 +75,7 @@ class Main extends Component {
     return(
       <div className="navigation">
         <Navbar variant="dark" expand="lg" className="border-bottom border-light mynavbar1">
-          <a href='/' className="thisA"><img className="titleImg" src='orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
+          <a href='/' className="thisA"><img className="titleImg" src='/orbis-agricole/images/orbislogo.jpg' alt="Logo"/></a>
           <div className="navbar-nav mr-auto">
             <li className="nav-item marg">
               <Link to={"/home"} className="nav-link">
@@ -128,9 +128,9 @@ class Main extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
+                <Link to="/login" className="nav-link" onClick={this.logOut}>
                   Se déconnecter
-                </a>
+                </Link>
               </li>
             </div>
           ) : (
@@ -149,7 +149,7 @@ class Main extends Component {
                         </Form>
               <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
-                  Se connecter
+                  Se Connecter
                 </Link>
               </li>
 
