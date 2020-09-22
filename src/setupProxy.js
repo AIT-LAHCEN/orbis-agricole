@@ -5,7 +5,7 @@ module.exports = function (app) {
     app.use(
         '/domaine',
         createProxyMiddleware({
-            target: 'http://newsorbisagro-env.eba-pnjc2jvm.eu-west-3.elasticbeanstalk.com/',
+            target: 'https://orbisagroindustry.live',
             changeOrigin: true,
         })
     );
