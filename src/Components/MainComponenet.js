@@ -121,7 +121,7 @@ class Main extends Component {
                 </Link>
               </li>
               <li className="nav-item marg">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
+                <a href="/orbis-agricole/#/login" className="nav-link" onClick={this.logOut}>
                   Se déconnecter
                 </a>
               </li>
