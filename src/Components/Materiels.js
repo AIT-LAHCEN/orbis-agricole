@@ -20,7 +20,9 @@ const Articles = () => {
     const [articles, setArticles ] = useState([]);
   
     const fetchArticles = () => {
-      axios.get("/api/v1/article").then(res => {
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+      axios.get(API_URL+"api/v1/article").then(res => {
         // console.log(Object.values(res.data));
         setArticles(res.data.filter((article) => article.theme === 'matériels' && article.published));
       });
@@ -41,7 +43,7 @@ const Articles = () => {
             <Card>
                 <Link to={`/news/${article.id}`} style={{textDecoration: 'none'}}>
                     <CardActionArea className="myCard">
-                        {article.id ? <CardMedia className="image" component="img" height="140" image={`/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
+                        {article.id ? <CardMedia className="image" component="img" height="140" image={`https://orbisagroindustry.live/api/v1/article/${article.id}/image/download`} alt={article.title}/> : null }
                         <CardContent>
                             <Typography gutterBottom className="card-title body" noWrap> {article.title} </Typography>
                             <Typography variant="subtitle1" size="small" color="secondary" noWrap>{article.theme}</Typography>

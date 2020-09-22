@@ -15,7 +15,9 @@ const Articles = () => {
   const [articles, setArticles ] = useState([]);
 
   const fetchArticles = () => {
-    axios.get("/api/v1/article").then(res => {
+    delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+    axios.get(API_URL+"api/v1/article").then(res => {
       // console.log(Object.values(res.data));
       setArticles(res.data.filter((article) => article.theme === 'gestion'));
     });

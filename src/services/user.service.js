@@ -1,7 +1,8 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = '/api/test/';
+delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+const API_URL = "https://orbisagroindustry.live/";
 
 class UserService {
   getPublicContent() {

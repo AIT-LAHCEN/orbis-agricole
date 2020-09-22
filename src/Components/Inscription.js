@@ -31,8 +31,10 @@ class Register extends Component {
     handleSubmit(values) {
 
         console.log('Current State is: ' + JSON.stringify(values));
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
         axios.post(
-            `/api/auth/inscription`,
+            API_URL+`api/auth/inscription`,
             values,
             {
               headers: {

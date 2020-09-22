@@ -17,7 +17,9 @@ export default class usersList extends Component {
     }
 
     componentDidMount(){
-        axios.get("/api/admin/Users",{
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+        axios.get(API_URL+"api/admin/Users",{
             headers: authHeader()
         })
         .then(response => response.data)
@@ -27,7 +29,9 @@ export default class usersList extends Component {
     }
 
     deleteUser = (userId) => {
-        axios.delete("/api/admin/Users/" + userId,{
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+        axios.delete(API_URL+"api/admin/Users/" + userId,{
             headers: authHeader()
         }).then(response => {
             if(response.data != null){

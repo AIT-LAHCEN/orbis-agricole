@@ -83,7 +83,7 @@ export default class Articledetail extends Component {
                 <Media tag="li">
                     <div className="MyMedia">
                       <Media left middle className="ImageDetailNews">
-                          {currentarticle.id ? <Media object style={{width : '30em' , height : '20em' }} src={`/api/v1/article/${currentarticle.id}/image/download`} alt={currentarticle.title}/> : null }
+                          {currentarticle.id ? <Media object style={{width : '30em' , height : '20em' }} src={`https://orbisagroindustry.live/api/v1/article/${currentarticle.id}/image/download`} alt={currentarticle.title}/> : null }
                       </Media>
                       <Media body className="ml-5">
                         <Media heading style={{fontSize : '30px'}}>{currentarticle.description}</Media>

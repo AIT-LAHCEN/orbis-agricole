@@ -28,7 +28,9 @@ export default class User extends Component {
     }
 
     finduserById = (userId) => {
-        axios.get("/api/admin/Users/" + userId, {
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+        axios.get(API_URL+"api/admin/Users/" + userId, {
             headers: authHeader() 
             }
         )
@@ -65,7 +67,9 @@ export default class User extends Component {
             roles: this.state.roles
         };
 
-        axios.post("/api/admin/Users", user)
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+        axios.post(API_URL+"api/admin/Users", user)
             .then(response => {
                 if(response.data != null) {
                     this.setState({"show":true, "method":"post"});
@@ -90,8 +94,9 @@ export default class User extends Component {
             password: this.state.password,
             roles: this.state.roles
         };
-
-        axios.put(`/api/admin/Users/${this.state.id}`, user,{
+        delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+        const API_URL = "https://orbisagroindustry.live/";
+        axios.put(API_URL+`api/admin/Users/${this.state.id}`, user,{
             headers : authHeader()
         }).then(response => {
                 if(response.data != null) {

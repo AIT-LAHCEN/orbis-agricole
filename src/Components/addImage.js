@@ -3,6 +3,7 @@ import { FormGroup, Col, Button } from 'reactstrap';
 import axios from 'axios';
 import {useDropzone} from 'react-dropzone';
 import { NavLink } from 'react-router-dom';
+import authHeader from '../services/auth-header';
 
 var imageLink;
 var contenu2;
@@ -15,8 +16,10 @@ var title2;
 function Dropzone({ID_index}) {  
     
     const fetchArticles = async () => {
+      delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+      const API_URL = "https://orbisagroindustry.live/";
       await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-      await axios.get("/api/Articles").then(res => {
+      await axios.get(API_URL+"api/Articles").then(res => {
             console.log(res.data[res.data.length-1]);
           console.log(res.data[res.data.length-1].id);
           ID_index = res.data[res.data.length-1].id;
@@ -41,8 +44,11 @@ function Dropzone({ID_index}) {
     const formData = new FormData();
     formData.append("file",file);
 
+    delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+    const API_URL = "https://orbisagroindustry.live/";
+
     axios.post(
-      `/api/v1/article/${ID_index}/image/upload`,
+      API_URL+`api/v1/article/${ID_index}/image/upload`,
       formData,
       {
         headers: {
@@ -56,18 +62,20 @@ function Dropzone({ID_index}) {
       console.log(err);
     });
 
-    axios.put(`/api/Articles/${ID_index}`, {
+    delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+    const API_URL2 = "https://orbisagroindustry.live/";
+    axios.put(API_URL2+`api/Articles/${ID_index}`, {
         articleImageLink: imageLink,
         contenu: contenu2,
         date: date2,
         description: description2,
         published: published2,
         theme: theme2,
-        title: title2,
-        headers: {
-            "Content-Type": "application/json",
-               }
-        })
+        title: title2},
+        {
+          headers: authHeader()
+        }
+        )
         .then(response => {
           
         console.log(response);
