@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/orbis-agricole/static/css/main.ac042fc1.chunk.css",
-    "main.js": "/orbis-agricole/static/js/main.56f1e540.chunk.js",
-    "main.js.map": "/orbis-agricole/static/js/main.56f1e540.chunk.js.map",
+    "main.js": "/orbis-agricole/static/js/main.ae9d8b82.chunk.js",
+    "main.js.map": "/orbis-agricole/static/js/main.ae9d8b82.chunk.js.map",
     "runtime-main.js": "/orbis-agricole/static/js/runtime-main.778363fd.js",
     "runtime-main.js.map": "/orbis-agricole/static/js/runtime-main.778363fd.js.map",
-    "static/css/2.f26dcaeb.chunk.css": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css",
-    "static/js/2.c45b21d6.chunk.js": "/orbis-agricole/static/js/2.c45b21d6.chunk.js",
-    "static/js/2.c45b21d6.chunk.js.map": "/orbis-agricole/static/js/2.c45b21d6.chunk.js.map",
+    "static/css/2.a05c3bb6.chunk.css": "/orbis-agricole/static/css/2.a05c3bb6.chunk.css",
+    "static/js/2.e9405e2a.chunk.js": "/orbis-agricole/static/js/2.e9405e2a.chunk.js",
+    "static/js/2.e9405e2a.chunk.js.map": "/orbis-agricole/static/js/2.e9405e2a.chunk.js.map",
     "index.html": "/orbis-agricole/index.html",
-    "precache-manifest.0bf09f67a102b6cdb65d8af4c2686c97.js": "/orbis-agricole/precache-manifest.0bf09f67a102b6cdb65d8af4c2686c97.js",
+    "precache-manifest.585dd612bca2da56eab652906bf78bf3.js": "/orbis-agricole/precache-manifest.585dd612bca2da56eab652906bf78bf3.js",
     "service-worker.js": "/orbis-agricole/service-worker.js",
-    "static/css/2.f26dcaeb.chunk.css.map": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css.map",
+    "static/css/2.a05c3bb6.chunk.css.map": "/orbis-agricole/static/css/2.a05c3bb6.chunk.css.map",
     "static/css/main.ac042fc1.chunk.css.map": "/orbis-agricole/static/css/main.ac042fc1.chunk.css.map",
-    "static/js/2.c45b21d6.chunk.js.LICENSE.txt": "/orbis-agricole/static/js/2.c45b21d6.chunk.js.LICENSE.txt",
+    "static/js/2.e9405e2a.chunk.js.LICENSE.txt": "/orbis-agricole/static/js/2.e9405e2a.chunk.js.LICENSE.txt",
     "static/media/App.css": "/orbis-agricole/static/media/check-solid.e597acab.svg",
     "static/media/font-awesome.css": "/orbis-agricole/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/the-farmer_Rlqc19AY_MMD1.mp4": "/orbis-agricole/static/media/the-farmer_Rlqc19AY_MMD1.c9ce1872.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.778363fd.js",
-    "static/css/2.f26dcaeb.chunk.css",
-    "static/js/2.c45b21d6.chunk.js",
+    "static/css/2.a05c3bb6.chunk.css",
+    "static/js/2.e9405e2a.chunk.js",
     "static/css/main.ac042fc1.chunk.css",
-    "static/js/main.56f1e540.chunk.js"
+    "static/js/main.ae9d8b82.chunk.js"
   ]
 }
