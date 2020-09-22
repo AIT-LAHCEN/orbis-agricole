@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "/domaine/api/auth/";
+delete axios.defaults.headers.common["https://ait-lahcen.github.io/"];
+const API_URL = "https://orbisagroindustry.live/api/auth/";
 
 class AuthService {
   login(username, password) {
