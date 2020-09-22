@@ -149,7 +149,7 @@ class Main extends Component {
                         </Form>
               <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
-                  Se Connecter
+                  Se connecter
                 </Link>
               </li>
 
