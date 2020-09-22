@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/orbis-agricole/static/css/main.8b808a21.chunk.css",
-    "main.js": "/orbis-agricole/static/js/main.c01f8d02.chunk.js",
-    "main.js.map": "/orbis-agricole/static/js/main.c01f8d02.chunk.js.map",
+    "main.js": "/orbis-agricole/static/js/main.19b2b08d.chunk.js",
+    "main.js.map": "/orbis-agricole/static/js/main.19b2b08d.chunk.js.map",
     "runtime-main.js": "/orbis-agricole/static/js/runtime-main.778363fd.js",
     "runtime-main.js.map": "/orbis-agricole/static/js/runtime-main.778363fd.js.map",
     "static/css/2.f26dcaeb.chunk.css": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css",
-    "static/js/2.a0641537.chunk.js": "/orbis-agricole/static/js/2.a0641537.chunk.js",
-    "static/js/2.a0641537.chunk.js.map": "/orbis-agricole/static/js/2.a0641537.chunk.js.map",
+    "static/js/2.2ba96a80.chunk.js": "/orbis-agricole/static/js/2.2ba96a80.chunk.js",
+    "static/js/2.2ba96a80.chunk.js.map": "/orbis-agricole/static/js/2.2ba96a80.chunk.js.map",
     "index.html": "/orbis-agricole/index.html",
-    "precache-manifest.a6a06c776f9411bac87bc07641957bc1.js": "/orbis-agricole/precache-manifest.a6a06c776f9411bac87bc07641957bc1.js",
+    "precache-manifest.d0dae77af574dfc592620a38f6e5a39b.js": "/orbis-agricole/precache-manifest.d0dae77af574dfc592620a38f6e5a39b.js",
     "service-worker.js": "/orbis-agricole/service-worker.js",
     "static/css/2.f26dcaeb.chunk.css.map": "/orbis-agricole/static/css/2.f26dcaeb.chunk.css.map",
     "static/css/main.8b808a21.chunk.css.map": "/orbis-agricole/static/css/main.8b808a21.chunk.css.map",
-    "static/js/2.a0641537.chunk.js.LICENSE.txt": "/orbis-agricole/static/js/2.a0641537.chunk.js.LICENSE.txt",
+    "static/js/2.2ba96a80.chunk.js.LICENSE.txt": "/orbis-agricole/static/js/2.2ba96a80.chunk.js.LICENSE.txt",
     "static/media/App.css": "/orbis-agricole/static/media/check-solid.e597acab.svg",
     "static/media/font-awesome.css": "/orbis-agricole/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/the-farmer_Rlqc19AY_MMD1.mp4": "/orbis-agricole/static/media/the-farmer_Rlqc19AY_MMD1.c9ce1872.mp4"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.778363fd.js",
     "static/css/2.f26dcaeb.chunk.css",
-    "static/js/2.a0641537.chunk.js",
+    "static/js/2.2ba96a80.chunk.js",
     "static/css/main.8b808a21.chunk.css",
-    "static/js/main.c01f8d02.chunk.js"
+    "static/js/main.19b2b08d.chunk.js"
   ]
 }
