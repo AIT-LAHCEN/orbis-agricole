@@ -56,7 +56,7 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
+          this.props.history.push("/home");
           window.location.reload();
         },
         error => {
@@ -69,7 +69,7 @@ export default class Login extends Component {
 
           this.setState({
             loading: false,
-            message: resMessage
+            message: "Authentification échouée"
           });
         }
       );
